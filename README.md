@@ -1,10 +1,6 @@
-- 👋 Hi, I’m @SamTlor
-- 👀 I’m interested in Java because it's what my teachers use, python, webscraping, big data, API's, and AI
-- 🌱 I’m currently learning Java and python in my spare time when I can
-- 💞️ I’m looking to collaborate on fun projects
-- 📫 How to reach me: 703-969-6032
+This file contains general information about the files in this repository. According to  [Wikipedia](https://en.wikipedia.org/wiki/README), 
 
-<!---
-SamTlor/SamTlor is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+> "A README file contains information about other files in a directory or archive of computer software. A form of documentation, it is > usually a simple plain text file called Read Me, READ.ME, README.TXT, README.md(for a text file using markdown markup), README.1ST  – > or simply README."
+
+Sam Taylor
+taylors16@vcu.edu
