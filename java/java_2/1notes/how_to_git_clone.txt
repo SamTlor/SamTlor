@@ -1,0 +1,4 @@
+from any cmd window 
+because git is in the PATH
+
+git clone [url goes here]

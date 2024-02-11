@@ -1,0 +1,15 @@
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\bin\Debug\net6.0\structures.exe
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\bin\Debug\net6.0\structures.deps.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\bin\Debug\net6.0\structures.runtimeconfig.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\bin\Debug\net6.0\structures.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\bin\Debug\net6.0\structures.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.vbproj.AssemblyReference.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.AssemblyInfoInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.AssemblyInfo.vb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.vbproj.CoreCompileInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\refint\structures.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\structures.genruntimeconfig.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\structures\structures\obj\Debug\net6.0\ref\structures.dll

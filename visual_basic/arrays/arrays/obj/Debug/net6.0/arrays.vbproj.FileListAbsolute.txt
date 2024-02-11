@@ -1,0 +1,15 @@
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\bin\Debug\net6.0\arrays.exe
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\bin\Debug\net6.0\arrays.deps.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\bin\Debug\net6.0\arrays.runtimeconfig.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\bin\Debug\net6.0\arrays.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\bin\Debug\net6.0\arrays.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.vbproj.AssemblyReference.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.AssemblyInfoInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.AssemblyInfo.vb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.vbproj.CoreCompileInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\refint\arrays.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\arrays.genruntimeconfig.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\arrays\arrays\obj\Debug\net6.0\ref\arrays.dll

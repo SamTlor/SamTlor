@@ -1,0 +1,2 @@
+- every one of these files has a .bat file with the same name that goes @python.exe C:/filepath/file.py%*
+- this makes it so that using "win + r" i can call these files to do something simple and tedious for me

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+
+    <!-- begin fullpage -->
+  
+    <div id="fullpage">
+  
+      <!-- begin section -->
+  
+      <div class="section aboutme" data-anchor="aboutme">
+        <div class="opaque-bg animated fadeInDown">
+          <h1 style="color:white">Sam Taylor<span style="color:#FF6363">/</span>Ali</h1>
+          <p><span id="holder"></span><span class="blinking-cursor"></span></p>
+        </div>
+        <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
+      </div>
+      <!-- end section -->
+  
+      <!-- begin section -->
+  
+      <div class="section" data-anchor="skills">
+        <div class="content">
+          <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">When Covid first started in 2020 my Dad and I built programs that used the Spotify API. The joy of working in a team to work on programs that make life easier led me to pursue and degree in Computer Science. From there I've researched a couple different elective courses and discovered a passion for Data Science. I hope to get a job where I can put my passions to use and continue to learn new things with new people!</p>
+        </p>
+          <h1 class="wow fadeInDown" data-wow-delay="0.2s">Skills</h1>  
+          <p class="wow fadeInDown" data-wow-delay="0.2s"> Programming: Python, Java, C, C++, C#, Visual Basic, SQL, JavaScript, PHP, HTML, CSS, Excel, Flask, Docker, Lisp, Jupyter Notebook, IDEs, GitHub </p>
+          <p class="wow fadeInDown" data-wow-delay="0.2s"> Techniques: Machine learning, linear regression, logistic regression, version control, API integration, cloud computing, data visualization, quality assurance, containerization, code review, technical documentation</p>
+        </div>
+      </div>
+  
+      <!-- begin section -->
+  
+      <div class="section" data-anchor="projects">
+        <div class="content-slide">
+          <h1 style="font-size:50px ;">Projects</h1>
+
+          <div class="slide">
+            <h1>Predicting Solar Wind Conditions at Psyche 16 with NASA</h1>
+            <p>Psyche 16 is an asteroid floating in the asteroid belt between Mars and Jupiter. Some scientists have speculated that it could have once been a planet like Earth that was perfectly hit by a different asteroid stripping the planet of the outer crust of the planet, leaving only the rare earth elements like iron exposed to the vaccum of space. The pressure would enrich the elements into even more valuable resources. This would make Psyche an important target for asteroid mining missions in the future.</p>
+            <p>In order to verify these speculations NASA launched a satellite that would pass by Psyche 16 and study it. The potential resources like iron in the asteroid give off very strong magnetic fields that would be readable by some instruments on the satellite. They would be interferred with however by the magnetic fields of solar winds from the sun that propagate through our solar system. In order for the satellite to be able to properly study the asteroid it would need to be able to know solar wind conditions there.</p>
+            <p>An incredible amount of research was done to find satellites that would be hit by the same solar winds. This proved difficult because of the orbit of Earth and the slow trajectories of the satellites. </p>
+            <p>We used many different machine learning concepts like linear regression, logistic regression, correlation coefficients, neural networks, and labeling</p>
+            <p>Preprocessing is the most important part of data science and so I did a lot of data cleaning like handling of null values, standardization, and dropping data that was not useful. </p>
+            <p>I led my team and kept everyone organized and on task.</p>
+          </div>
+
+          <div class="slide">            
+            <h1>Spotify Adder</h1>
+                <p>I switched to iPhone in 2022 and was really disappointed that it didn't have a way to play a random song from a spotify playlist as an alarm like my old android did. So I used the raspberry pi that my dad gave me to do it for my and wake me up every morning.</p>
+                <p>It uses the requests module to authorize a connection to the Spotify API and connect to the correct endpoints to get a song from the right playlist. It uses the correct parameters to get a random song. It is truly automated so that it will run while i'm asleep. </p>
+                <p>While I was working on this I decided to make it double as a playlist manager. I created a database to keep track of what songs are in what playlists. The program will automatically add songs that are in smaller playlists into bigger playlists for individual genres.</p>
+          </div>
+
+          <div class="slide">
+            <h1>BoxOfficeMaxTV+</h1>
+                <p>Designed and implemented comprehensive SQL database system that efficiently stored and managed data related to movies, actors, and their respective awards. </p>
+                <p>I designed an Entity Relationship Diagram. </p>
+                <p>I crafted a user-friendly front-end website that provided easy access to stored information, enhancing user experience and accessibility. </p>
+                <p>I implemented secure login system with role-based access control, allowing administrators to modify database content while restricting normal users to read-only access, enhancing data security.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end section -->
+  
+        </div>
+      </div>
+      <!-- end section -->
+  
+      <!-- begin section -->
+  
+      <div class="section fp-auto-height">
+        <div class="footer" style="background-color: black;">
+          <p>Links</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/sam-tlor/" target="_blank" class="pdf-link">
+                <img src="LI-Logo.png" alt="Linkden Icon" width="150px" height="40px">
+              </a>
+            <a href="Sam_Taylor_Resume4.pdf" target="_blank" class="pdf-link" style="font-size: 25px;"><i class ="fa fa-file-pdf" style="font-size: 25px;"> </i> Resume</a>
+          </div>
+        </div>
+      </div>
+      <!-- end section -->
+  
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- end fullpage -->
+  </body>
+</html>

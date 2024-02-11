@@ -1,0 +1,14 @@
+REBASE                                      //copies a set of commits and moves them somewhere else
+
+$ git branch bugFix                         //creates new branch
+$ git checkout bugFix                       //
+
+$ git commit
+
+$ git checkout main
+
+$ git commit
+
+$ git checkout bugFix
+
+$ git rebase main

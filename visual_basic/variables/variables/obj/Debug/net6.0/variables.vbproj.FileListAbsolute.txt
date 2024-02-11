@@ -1,0 +1,15 @@
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\bin\Debug\net6.0\variables.exe
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\bin\Debug\net6.0\variables.deps.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\bin\Debug\net6.0\variables.runtimeconfig.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\bin\Debug\net6.0\variables.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\bin\Debug\net6.0\variables.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.vbproj.AssemblyReference.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.AssemblyInfoInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.AssemblyInfo.vb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.vbproj.CoreCompileInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\refint\variables.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\variables.genruntimeconfig.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\variables\variables\obj\Debug\net6.0\ref\variables.dll
