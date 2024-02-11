@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Map;
 
 public class Ztest {
@@ -47,16 +48,19 @@ public class Ztest {
 
 
         // BFS traversal for both types
-        System.out.println("Adjacency list");
+        System.out.println("BFS: Adjacency list");
         BFS.bfs(adjGraph.getAdjacencyList(), 2);
 
-        System.out.println("\nAdjacency matrix");
+        System.out.println("\nBFS: Adjacency matrix");
         BFS.bfs(matGraph.getAdjacencyMatrix(), 2);
 
 
 
         // DFS traversal for both types
-
-
+        System.out.println("\nDFS: Adjacency list");
+        DFS.dfs(adjGraph.getAdjacencyList(), 2, new HashSet<>());
+        
+        System.out.println("\nDFS: Adjacency matrix");
+        DFS.dfs(matGraph.getAdjacencyMatrix(), 2, new HashSet<>());
     }
 }

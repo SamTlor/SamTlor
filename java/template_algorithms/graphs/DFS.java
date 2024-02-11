@@ -9,45 +9,29 @@ import java.util.Set;
 // otherwise it will crash. i do not do error handling.
 public class DFS {
     
-    public static <T> void dfs(T graph, int startVertex) {
+    public static <T> void dfs(T graph, int startVertex, Set<Integer> visited) {
 
         // the vertices whose neighbors we've already looked at
-        Set <Integer> visited = new HashSet<>();
-
-        // the vertices whose neighbors we'll look at soon
-        Queue<Integer> queue = new LinkedList<>();
-
-        // the first step is looking at startVertex so it gets added first
         visited.add(startVertex);
-        queue.add(startVertex);
+
+
+
+        // this is where i can add a "sum += currentVertex" or a 
+        System.out.print(startVertex + " ");
+        // "currentVertex == target" or whatever
 
 
 
         // adjacency list
         if (graph instanceof Map) {
             Map<Integer, List<Integer>> adjacencyList = (Map<Integer, List<Integer>>) graph;
-            while (!queue.isEmpty()) {
-                int currentVertex = queue.poll();
-                System.out.print(currentVertex + " ");
-
-
-
-                // \/ this is where i can add a "sum += currentVertex" or a 
-                
-                // ^^ "currentVertex == target" or whatever
-
-
-
-                List<Integer> neighbors = adjacencyList.get(currentVertex);
-                if (neighbors != null) {
-                    for (int neighbor : neighbors) {
-                        if (!visited.contains(neighbor)) {
-                            visited.add(neighbor);
-                            queue.add(neighbor);
-                        }
+            List<Integer> neighbors = adjacencyList.get(startVertex);
+            if (neighbors != null) {
+                for (int neighbor : neighbors) {
+                    if(!visited.contains(neighbor)) {
+                        dfs(graph, neighbor, visited);
                     }
                 }
-
             }
         } 
         
@@ -56,30 +40,12 @@ public class DFS {
         // adjacency matrix
         else {
             int[][] adjacencyMatrix = (int[][]) graph;
-            while (!queue.isEmpty()) {
-                int currentVertex = queue.poll();
-                System.out.print(currentVertex + " ");
-                
-
-                
-                // this is where i can add a "sum += currentVertex" or a 
-                
-                // "currentVertex == target" or whatever
-
-
-
-                for (int neighbor = 0; neighbor < adjacencyMatrix.length; neighbor++) {
-                    if (adjacencyMatrix[currentVertex][neighbor] == 1 && !visited.contains(neighbor)) {
-                        visited.add(neighbor);
-                        queue.add(neighbor);
-                    }
+            for (int neighbor = 0; neighbor < adjacencyMatrix.length; neighbor++) {
+                if (adjacencyMatrix[startVertex][neighbor] == 1 && !visited.contains(neighbor)) {
+                    dfs(graph, neighbor, visited);
                 }
             }
-        }
-
-
-
-
+        } 
 
     }
 }
