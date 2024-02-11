@@ -1,3 +1,7 @@
+
+// https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+
+
 import java.util.HashSet;
 import java.util.Map;
 
@@ -62,5 +66,21 @@ public class Ztest {
         
         System.out.println("\nDFS: Adjacency matrix");
         DFS.dfs(matGraph.getAdjacencyMatrix(), 2, new HashSet<>());
+
+
+
+
+
+
+
+        /*
+            For a general weighted graph, we can calculate single source shortest distances in O(VE) time using Bellman–Ford Algorithm. https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+            
+            For a graph with no negative weights, we can do better and calculate single source shortest distances in O(E + VLogV) time using Dijkstra’s algorithm. https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
+            
+            Can we do even better for Directed Acyclic Graph (DAG)? We can calculate single source shortest distances in O(V+E) time for DAGs. The idea is to use Topological Sorting. https://www.geeksforgeeks.org/topological-sorting/
+
+            https://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/
+        */
     }
 }
