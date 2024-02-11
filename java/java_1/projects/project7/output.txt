@@ -1,0 +1,10 @@
+The average value is: 32166629.10
+
+The highest value is: 210565654.50
+
+The art above the average value are: 
+	Venus de Milo Greek sculptor 2.105656545E8 943 Key Ave
+	David Donatello 4.164272344E7 823 Harlow St
+
+Is David by Donatello in the data? true
+

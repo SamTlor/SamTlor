@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  flask-app:
+    build:
+      context: ./server/
+    ports:
+      - "5000:5000"
+  test-container:
+    build:
+      context: ./test/
+    depends_on:
+      - flask-app

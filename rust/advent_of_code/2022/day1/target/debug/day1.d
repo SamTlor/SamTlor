@@ -1,0 +1,1 @@
+C:\Users\samtl\OneDrive\Documents\1_personal\ stuff\job_search\SamTlor\rust\advent_of_code\2022\day1\target\debug\day1.exe: C:\Users\samtl\OneDrive\Documents\1_personal\ stuff\job_search\SamTlor\rust\advent_of_code\2022\day1\src\main.rs

@@ -1,0 +1,52 @@
+homework due 10/31          (monday)
+quiz 4 11/2                 (wednesday after that)
+
+
+
+
+creating tables
+CREATE TABLE {relation name} (
+    {constraint name}           {constraints}
+);
+makes a table called {relation name} with any constraints set up that you want
+
+
+
+constraints are things like
+    AUTO_INCREMENT
+    varchar(num)
+    decimal(num)
+    char(num)
+
+
+ALTER TABLE : takes months of planning just don't do it for this class
+                alters the structure after it's already running
+
+
+
+INSERT INTO {relation anme} VALUES ({values})
+inserts a new row with the values matching any order that was specified
+
+
+UPDATE {relation} SET {column} WHERE {predicate} 
+UPDATE relation SET this change or whatever WHERE something like id = 123
+update normally will change every thing in the table so use WHERE to only change specific things
+changes things that already exist
+can have logic like when and else statements
+
+
+
+DELETE FROM {relation} WHERE {predicate}
+
+
+TRUNCATE TABLE {relation}
+won't do in this class prolly
+removes all rows from a table
+
+DROP TABLE {relation}
+deletes a whole table
+
+
+
+distinct means unique data like no duplicates for a certain value
+concat combines two values

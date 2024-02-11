@@ -1,0 +1,15 @@
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\bin\Debug\net6.0\classes.exe
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\bin\Debug\net6.0\classes.deps.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\bin\Debug\net6.0\classes.runtimeconfig.json
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\bin\Debug\net6.0\classes.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\bin\Debug\net6.0\classes.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.vbproj.AssemblyReference.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.AssemblyInfoInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.AssemblyInfo.vb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.vbproj.CoreCompileInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\refint\classes.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\classes.genruntimeconfig.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\vb\classes\classes\obj\Debug\net6.0\ref\classes.dll

@@ -1,0 +1,8 @@
+https://product-etg3.onrender.com/products
+https://product-etg3.onrender.com/products/<int:product_id>
+https://product-etg3.onrender.com/products/
+https://product-etg3.onrender.com/products/update/<int:product_id>
+
+https://product-etg3.onrender.com/cart/<int:user_id>
+https://product-etg3.onrender.com/cart/<int:user_id>/add/<int:product_id>
+https://product-etg3.onrender.com/cart/<int:user_id>/remove/<int:product_id>

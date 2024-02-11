@@ -1,0 +1,13 @@
+address         hex             binary                              meaning
+
+0000            D1FC15          1101 0001 1111 1100 0001 0101       INSTRUCTION: 1101
+                                                                                 1101 = read byte
+
+                                                                                 0001
+                                                                                 0001 = raaa    
+                                                                                 r = 0 means load to accumulator
+                                                                                 aaa = 001 direct addressing
+
+                                                                    OPERAND : FC15
+                                                                                 FC15 = input device
+                                                                                 load byte from key board (TAKE INPUT)

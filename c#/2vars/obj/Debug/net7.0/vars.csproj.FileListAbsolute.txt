@@ -1,0 +1,15 @@
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\bin\Debug\net7.0\vars.exe
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\bin\Debug\net7.0\vars.deps.json
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\bin\Debug\net7.0\vars.runtimeconfig.json
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\bin\Debug\net7.0\vars.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\bin\Debug\net7.0\vars.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.csproj.AssemblyReference.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.AssemblyInfoInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.AssemblyInfo.cs
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.csproj.CoreCompileInputs.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\refint\vars.dll
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.pdb
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\vars.genruntimeconfig.cache
+C:\Users\samtl\OneDrive\Documents\zome_files\c#\vars\obj\Debug\net7.0\ref\vars.dll
