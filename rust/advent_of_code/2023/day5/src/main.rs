@@ -19,10 +19,11 @@ fn part_one(filepath: &str) -> Result<i32, Box<dyn std::error::Error>> {
         let line = line?;
 
         let seeds: Vec<i32> = line.trim().split_whitespace().filter_map(|x| x.parse().ok()).collect();
-        println!("{:?}", seeds);
+        for seed in seeds {
+            // do stuff here
+        }
 
         break;
-        // test
     }
 
     Ok(ans)
