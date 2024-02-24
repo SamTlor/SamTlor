@@ -6,7 +6,6 @@ import java.io.IOException;
 
 
 
-
 public class day7 {
 
     // the main function
