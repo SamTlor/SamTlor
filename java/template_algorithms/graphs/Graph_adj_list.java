@@ -1,4 +1,6 @@
 import java.util.Map;
+import java.util.Set;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.LinkedList;
@@ -50,7 +52,7 @@ public class Graph_adj_list {
 
     public void addEdge(int source, int destination) {
 
-        // if source or destination don't exist in the graph then add them
+        // if the source or destination params don't exist in the graph then add them
         if (!adjacencyList.containsKey(source)) {
             addVertex(source);
         }
@@ -86,4 +88,55 @@ public class Graph_adj_list {
         }
         return result.toString();
     }
+
+
+
+    // functions
+    public static List<List<String>> getCycles(Graph_adj_list graph, String startVertex, Set<String> visited, 
+                                            List<String> path, List<List<String>> cycles) {
+
+        // the vertices whose neighbors we've already looked at
+        visited.add(startVertex);
+        path.add(startVertex);
+        
+
+
+        List<String> neighbors = graph.getNeighbors(startVertex);
+        if (neighbors != null) {
+            for (int i = 0; i < neighbors.size(); i++) {
+
+                String neighbor = neighbors.get(i);
+                if (checkForNeighbor(neighbor, path)){
+
+                    List<String> cycle = new ArrayList<>(path);
+                    cycle.add(neighbor);
+                    cycles.add(trimCycle(cycle, cycle.get(cycle.size() - 1)));
+                }
+
+
+                if(!visited.contains(neighbor)) {
+                    getCycles(graph, neighbor, visited, path, cycles, i);
+                }
+            }
+        }
+
+        path.remove(startVertex);
+        return cycles;
+    }
+    
+    public static List<String> trimCycle(List<String> cycle, String elementToFind){
+
+        int i = 0;
+        while (i < cycle.size()){
+            if ((cycle.get(i)).equals(elementToFind)){
+                break;
+            } else{
+                cycle.remove(i);
+            }
+            i++;
+        }
+
+        return cycle;
+    }
+
 }
