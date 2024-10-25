@@ -1,0 +1,45 @@
+
+Sam / Taylor
+
+ABOUT ME
+
+When Covid first started in 2020 my Dad and I built programs that used the Spotify API. The joy of working in a team to work on programs that make life easier led me to pursue and degree in Computer Science. From there I've researched a couple different elective courses and discovered a passion for Data Science. I hope to get a job where I can put my passions to use and continue to learn new things with new people!
+
+Skills
+
+Programming: Python, Java, C, C++, C#, Visual Basic, SQL, JavaScript, PHP, HTML, CSS, Excel, Flask, Docker, Lisp, Jupyter Notebook, IDEs, GitHub
+
+Techniques: Machine learning, linear regression, logistic regression, version control, API integration, cloud computing, data visualization, quality assurance, containerization, code review, technical documentation
+Projects
+Predicting Solar Wind Conditions at Psyche 16 with NASA
+
+Psyche 16 is an asteroid floating in the asteroid belt between Mars and Jupiter. Some scientists have speculated that it could have once been a planet like Earth that was perfectly hit by a different asteroid stripping the planet of the outer crust of the planet, leaving only the rare earth elements like iron exposed to the vaccum of space. The pressure would enrich the elements into even more valuable resources. This would make Psyche an important target for asteroid mining missions in the future.
+
+In order to verify these speculations NASA launched a satellite that would pass by Psyche 16 and study it. The potential resources like iron in the asteroid give off very strong magnetic fields that would be readable by some instruments on the satellite. They would be interferred with however by the magnetic fields of solar winds from the sun that propagate through our solar system. In order for the satellite to be able to properly study the asteroid it would need to be able to know solar wind conditions there.
+
+An incredible amount of research was done to find satellites that would be hit by the same solar winds. This proved difficult because of the orbit of Earth and the slow trajectories of the satellites.
+
+We used many different machine learning concepts like linear regression, logistic regression, correlation coefficients, neural networks, and labeling
+
+Preprocessing is the most important part of data science and so I did a lot of data cleaning like handling of null values, standardization, and dropping data that was not useful.
+
+I led my team and kept everyone organized and on task.
+Spotify Adder
+
+I switched to iPhone in 2022 and was really disappointed that it didn't have a way to play a random song from a spotify playlist as an alarm like my old android did. So I used the raspberry pi that my dad gave me to do it for my and wake me up every morning.
+
+It uses the requests module to authorize a connection to the Spotify API and connect to the correct endpoints to get a song from the right playlist. It uses the correct parameters to get a random song. It is truly automated so that it will run while i'm asleep.
+
+While I was working on this I decided to make it double as a playlist manager. I created a database to keep track of what songs are in what playlists. The program will automatically add songs that are in smaller playlists into bigger playlists for individual genres.
+BoxOfficeMaxTV+
+
+Designed and implemented comprehensive SQL database system that efficiently stored and managed data related to movies, actors, and their respective awards.
+
+I designed an Entity Relationship Diagram.
+
+I crafted a user-friendly front-end website that provided easy access to stored information, enhancing user experience and accessibility.
+
+I implemented secure login system with role-based access control, allowing administrators to modify database content while restricting normal users to read-only access, enhancing data security.
+
+Links
+Linkden Icon Resume
