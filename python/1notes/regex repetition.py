@@ -1,16 +1,32 @@
+# i would just use chatGPT for this now
+
+
 import re
 
-#returns if the stuff next to the "?" or if it's not 
+# ()? means that the stuff inside the parentheses is optional
+# it will return the word in compile or it will cause an error
 batregex = re.compile(r"Bat(wo)?man")
-var = batregex.search("The adventures of Batwoman")                                     #Batwoman
-var2 = batregex.search("The adventures of Batman")                                      #Batman
-print(var.group() + "\n" +var2.group() + "\n\n")
+var1 = batregex.search("The adventures of Batwoman")                                        #Batwoman
+var2 = batregex.search("The adventures of Batman")                                          #Batman
+var3 = batregex.search("The adventures of Superman")                                        #""
+for i in [var1, var2, var3]:
+    try:
+        print(f"{i.group()}")
+    except:
+        print("\"\"")
+print("\n\n")
 
+# a common use for ^^ is phone numbers
 phoneregex = re.compile(r"(\d\d\d-)?\d\d\d-\d\d\d\d")
-foo1 = phoneregex.search("My phone number is 867-5309. call me tomolly")                 #867-5309
-foo2 = phoneregex.search("My phone number is 703-867-5309. call me tomolly")             #867-5309
-foo3 = phoneregex.search("My phone number is (703) 867-5309. call me tomolly")           #867-5309
-print(foo1.group() + "\n" + foo2.group() + "\n" + foo3.group() + "\n\n")
+var4 = phoneregex.search("My phone number is 867-5309. call me tomolly")                 #867-5309
+var5 = phoneregex.search("My phone number is 703-867-5309. call me tomolly")             #867-5309
+var6 = phoneregex.search("My phone number is (703) 867-5309. call me tomolly")           #867-5309
+for i in [var4, var5, var6]:
+    try:
+        print(f"{i.group()}")
+    except:
+        print("\"\"")
+print("\n\n")
 
 #returns if the stuff next to the "*" or if it's not
 batregex = re.compile(r"Bat(wo)*man")

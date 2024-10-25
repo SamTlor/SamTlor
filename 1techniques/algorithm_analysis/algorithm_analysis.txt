@@ -1,0 +1,72 @@
+Brute Force:
+Start with a simple, straightforward solution.
+Enumerate all possible solutions and choose the best one.
+
+Two Pointers:
+Use two pointers to traverse the data structure.
+Often used in sorted arrays or linked lists.
+
+Sliding Window:
+Maintain a subset of elements within a "window" that moves through the data.
+Useful for problems involving intervals or subarrays.
+
+Hashing:
+Utilize a hash table or set to store and look up values efficiently.
+Useful for counting frequencies or checking for duplicates.
+
+Binary Search:
+Apply binary search to a sorted data structure to find a specific element efficiently.
+Useful in problems with sorted arrays or searching.
+
+Dynamic Programming:
+Break down a problem into subproblems and solve them independently.
+Store intermediate results to avoid redundant computations.
+Useful for optimization problems and many combinatorial problems.
+
+Greedy Algorithm:
+Make locally optimal choices at each step to achieve a globally optimal solution.
+Often used in optimization problems.
+
+Depth-First Search (DFS) and Breadth-First Search (BFS):
+Traverse or search through a data structure using DFS or BFS.
+Useful for graph-related problems and tree traversal.
+
+Topological Sorting:
+Sort the vertices of a directed acyclic graph (DAG) based on their dependencies.
+Useful in scheduling or ordering problems.
+
+Divide and Conquer:
+Divide a problem into subproblems, solve them independently, and combine the results.
+Useful for problems that can be broken down into simpler instances.
+
+Backtracking:
+Systematically explore all possible solutions and backtrack when necessary.
+Useful for problems with multiple solutions or combinatorial problems.
+
+Binary Search Tree (BST):
+Utilize the properties of a binary search tree for efficient search, insertion, and deletion.
+Useful in problems involving ordered data.
+
+Union-Find (Disjoint Set Union):
+Maintain a collection of disjoint sets and efficiently perform union and find operations.
+Useful in problems involving connectivity and disjoint components.
+
+Bit Manipulation:
+Manipulate individual bits in an integer for efficient solutions.
+Useful in problems involving bitwise operations.
+
+Graph Algorithms (Dijkstra's, Floyd-Warshall, etc.):
+Apply specific graph algorithms based on the requirements of the problem.
+Useful for solving various graph-related problems.
+
+Linear Programming:
+Model an optimization problem with linear relationships and solve it using linear programming techniques.
+Useful for certain optimization problems.
+
+Branch and Bound:
+Divide the problem into subproblems, solve them, and prune branches based on certain criteria.
+Useful for optimization problems with discrete or combinatorial solutions.
+
+Randomized Algorithms:
+Introduce randomness to solve problems with uncertain input or to approximate solutions.
+Useful in situations where deterministic algorithms may be impractical.

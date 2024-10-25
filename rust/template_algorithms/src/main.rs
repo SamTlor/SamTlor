@@ -1,14 +1,16 @@
+
+
 /*
-This uses an ADJACENCY LIST
+    This uses an ADJACENCY LIST
 
-They're better for SPACE EFFICIENCY. 
-Especially for SPARSE GRAPHS where EDGES < POSSIBLE EDGES
+    They're better for SPACE EFFICIENCY. 
+    Especially for SPARSE GRAPHS where EDGES < POSSIBLE EDGES
 
-Makes it easier to ITERATE through neighbors
-Especially for graphs where there are MANY NEIGHBORS and FEW EDGES
+    Makes it easier to ITERATE through neighbors
+    Especially for graphs where there are MANY NEIGHBORS and FEW EDGES
 
-Makes it easy to ASSOCIATE INFORMATION with vertices
- */
+    Makes it easy to ASSOCIATE INFORMATION with vertices
+*/
 
 
 
@@ -42,20 +44,15 @@ impl Graph {
         }
     }
 
-
-
-
-
     /*
-        Function to add an edge to the graph. u is the source node. v is 
-        the destination node
-        
+        Function to add an edge to the graph
+
         uncomment the second line to make it UNDIRECTED
      */
-    fn add_edge(&mut self, u: usize, v: usize) {
+    fn add_edge(&mut self, source: usize, destination: usize) {
 
-        self.adjacency_list[u].push(v);
-        // self.adjacency_list[v].push(u);
+        self.adjacency_list[source].push(destination);
+        // self.adjacency_list[destination].push(source);
     }
 
 
@@ -117,12 +114,6 @@ impl Graph {
             }
         }
     }
-
-
-
-
-
-
 }
 
 
@@ -132,10 +123,11 @@ impl Graph {
 
 
 fn main() {
-    //this graph looks like the one in this picture
-    // https://miro.medium.com/v2/resize:fit:1005/1*fjiil9FYXuT-u-rt2UfbjA.png
-    
-    //there are 7 vertices in this graph: 0,1,2,3,  4,5,6
+    // the graph looks like this:
+    //             0
+    //     1               2
+    // 3       4       5       6
+
     let mut graph = Graph::new(7);
 
     graph.add_edge(0, 1);
