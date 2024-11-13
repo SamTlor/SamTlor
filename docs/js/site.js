@@ -5,7 +5,7 @@ var PortfolioApp = window.PortfolioApp || {};
 
     
     PortfolioApp.loadProjectLinks = function () {
-        $.get(apiEndpoint + '/projects').done(function (data) {
+        $.get(apiEndpoint + '/projects.json').done(function (data) {
             data.forEach(function (proj) {
                 $('.content-slide').append(
                     '<div class = "slide"><a href = "project.html#' + proj.id + '">' + proj.title + '</a></div>'
