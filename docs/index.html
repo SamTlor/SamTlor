@@ -29,13 +29,24 @@
         <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
       </div>
       <!-- end name-->
+
+      <!-- begin login -->
+      <div id="loggedOutMessage" style="display: none;">
+        <p><a href = "#">Register or login (this doesn't really matter but I'll email you a copy of my resume if you register)</a></p>
+      </div>
+
+      <div id="loggedInMessage" style="display: none;">
+        <p>Thank you so much for logging in! Email is on its way. Feel free to add any data you want to my BoxOfficeMaxTV+ project</p>
+        <p><a href="#">logout</a></p>
+      </div>
+      <!-- end login -->
   
       <!-- begin about me -->
       <div class="section" data-anchor="skills">
         <div class="content">
           <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">When Covid first started in 2020 my Dad and I built programs that used the Spotify API. The joy of working in a team to work on programs that make life easier led me to pursue and degree in Computer Science. From there I've researched a couple different elective courses and discovered a passion for Data Science. I hope to get a job where I can put my passions to use and continue to learn new things with new people!</p>
-        </p>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">When Covid first started in 2020 my Dad and I built programs that used the Spotify API. The joy of working in a team to work on programs that make life easier led me to pursue a degree in Computer Science. From there I've researched a couple different elective courses and discovered a passion for Data Science. I hope to get a job where I can put my passions to use and continue to learn new things with new people!</p>
+          
           <h1 class="wow fadeInDown" data-wow-delay="0.2s">Skills</h1>  
           <p class="wow fadeInDown" data-wow-delay="0.2s"> Programming: Python, Java, Rust, C, C++, C#, Visual Basic, SQL, Postgres, Typescript, JavaScript, PHP, HTML, CSS, Excel, Flask, Docker, Lisp, GitHub, DevOps, CI/CD, Linux </p>
           <p class="wow fadeInDown" data-wow-delay="0.2s"> Techniques: Machine learning, linear regression, logistic regression, version control, API integration, cloud computing, data visualization, quality assurance, containerization, code review, technical documentation</p>
@@ -66,7 +77,7 @@
             <img src="img/LI-Logo.png" alt="Linkden Icon" width="150px" height="40px">
           </a>
           
-          <a href="Sam_Taylor_Resume6.pdf" target="_blank" class="pdf-link" style="font-size: 25px;"><i class ="fa fa-file-pdf" style="font-size: 25px;">Resume</i></a>
+          <a href="../Sam_Taylor_Resume6.pdf" target="_blank" class="pdf-link" style="font-size: 25px;"><i class ="fa fa-file-pdf" style="font-size: 25px;">Resume</i></a>
         </div>
       </div>
     </div>
@@ -80,8 +91,17 @@
     <script src="js/site.js"></script>
     <script type="text/javascript">
       $(function () {
-        window.PortfolioApp.loadProjects();
+        window.PortfolioApp.loadProjectLinks();
       });
+
+      // logic to see if the user is logged in goes here
+      const isLoggedIn = false;
+      if (isLoggedIn) {
+        document.getElementById('loggedInMessage').style.display = 'block';
+      } else {
+        document.getElementById('loggedOutMessage').style.display = 'block';
+      }
+
     </script>
     <!-- end javascript -->
   </body>
