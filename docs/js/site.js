@@ -5,7 +5,7 @@ var PortfolioApp = window.PortfolioApp || {};
 
     
     PortfolioApp.loadProjectLinks = function () {
-        $.get(apiEndpoint + '/projects.json').done(function (data) {
+        $.get(apiEndpoint + '/project_links').done(function (data) {
             data.forEach(function (proj) {
                 $('.content-slide').append(
                     '<div class = "slide"><a href = "project.html#' + proj.id + '">' + proj.title + '</a></div>'
@@ -15,7 +15,7 @@ var PortfolioApp = window.PortfolioApp || {};
     };
 
     PortfolioApp.loadProjectDescription = function () {
-        $.get(apiEndpoint + '/projects/' + location.hash.substring(1) + '.json').done(function (data) {
+        $.get(apiEndpoint + '/project#' + location.hash.substring(1)).done(function (data) {
             $('.content-slide').append(
                 '<div class = "slide"><h1>' + data.title + '</h1><p>' + data.description + '</p></div>'
             )
