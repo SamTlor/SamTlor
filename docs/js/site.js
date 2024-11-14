@@ -17,7 +17,7 @@ var PortfolioApp = window.PortfolioApp || {};
     PortfolioApp.loadProjectDescription = function () {
         $.get(apiEndpoint + '/projects/' + location.hash.substring(1) + '.json').done(function (data) {
             $('.content-slide').append(
-                '<div class = "slide"><h1>' + proj.title + '</h1><p>' + proj.description + '</p></div>'
+                '<div class = "slide"><h1>' + data.title + '</h1><p>' + data.description + '</p></div>'
             )
         })
     }    
