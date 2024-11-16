@@ -10,7 +10,7 @@
         <body>
             
             <button type = "submit"><a href = "home.php">Home</a></button>
-            <button type = "submit"><a href = "index.php">Login</a></button>
+            <button type = "submit"><a href = "../project3.php">Login</a></button>
 
             <p><b>1)Do movies that get more awards have a bigger box office?</b></p>
                 <?php
