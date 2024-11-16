@@ -9,7 +9,7 @@ var PortfolioApp = window.PortfolioApp || {};
         $.get(apiEndpoint + '/project_links').done(function (data) {
             data.forEach(function (proj) {
                 $('.content-slide').append(
-                    '<div class = "slide"><a href = "project' + proj.id + '.html">' + proj.title + '</a></div>'
+                    '<div class = "slide"><a href = "projects/project' + proj.id + '.html">' + proj.title + '</a></div>'
                 )
             });
         });
