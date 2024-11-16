@@ -19,7 +19,8 @@ var PortfolioApp = window.PortfolioApp || {};
         const path = location.pathname;
         const fileName = path.substring(path.lastIndexOf('/') + 1);
         const match = fileName.match(/project(\d+)/);
-        const whichProject = match ? match[0] : null;
+        const whichProject = match ? match[1] : null;
+        console.log(whichProject);
 
         // will return 'no cases hit' if null
         $.get(apiEndpoint + '/projects/' + whichProject).done(function (data) {
