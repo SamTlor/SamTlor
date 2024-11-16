@@ -15,11 +15,11 @@
         $password = validate($_POST['password']);
 
         if (empty($Username)) {
-            header("Location: index.php?error=Username is required");
+            header("Location: ../project3.php?error=Username is required");
             exit();
         }
         if (empty($password)) {
-            header("Location: index.php?error=Password is required");
+            header("Location: ../project3.php?error=Password is required");
             exit();
         }
 
@@ -29,7 +29,7 @@
 
 
         if(!$result){
-            header('Location: index.php?error= Username password combination is wrong!');
+            header('Location: ../project3.php?error= Username password combination is wrong!');
             exit();
         } else{
             $_SESSION['user_id'] = $result['id'];

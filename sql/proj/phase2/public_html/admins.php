@@ -57,6 +57,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['Username'])) {
         </html>
 <?php
     } else{
-        header("Location: index.php");
+        header("Location: ../project3.php");
     }
 ?>
