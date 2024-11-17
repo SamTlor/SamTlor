@@ -4,20 +4,20 @@
 		<link rel = "stylesheet" href = "style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<style>
-		h1{
-            font-size:50px;
-            text-align:center;
-            padding-top:20px;
-            padding-bottom:20px;
-            color:#FFFFFF;
-        }	
-		body {
-		background-image: url('https://images.pexels.com/photos/3709369/pexels-photo-3709369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  		background-repeat: no-repeat;
-  		background-attachment: fixed;  
-  		background-size: cover;
-		color: black;
-		}
+			h1{
+				font-size:50px;
+				text-align:center;
+				padding-top:20px;
+				padding-bottom:20px;
+				color:#FFFFFF;
+			}	
+			body {
+				background-image: url('https://images.pexels.com/photos/3709369/pexels-photo-3709369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+				background-repeat: no-repeat;
+				background-attachment: fixed;  
+				background-size: cover;
+				color: black;
+			}
 		</style>
 	</head>
 	<body>
@@ -50,4 +50,18 @@
 		</div>
 
 	</body>
+
+    <!-- begin javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" type="text/javascript"></script>
+    <script src="js/config.js"></script>
+    <script src="js/site.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        window.PortfolioApp.loadProjectLinks();
+      });
+
+    </script>
+    <!-- end javascript -->
 </html>

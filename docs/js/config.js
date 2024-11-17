@@ -1,6 +1,6 @@
 var PortfolioApp = window.PortfolioApp || {};
 
-// api gateway creation tutorial:
+// API Gateway creation tutorial:
 //      1.  create API
 //      2.  REST api
 //      3.  api endpoint type: Edge-optimized
@@ -10,7 +10,7 @@ var PortfolioApp = window.PortfolioApp || {};
 //      7.  resource path: /
 //      8.  resource name: {proxy+}
 //      9.  create resource
-//      10. any
+//      10. click any
 //      11. edit integration
 //      12. Lambda function
 //      13. Lambda proxy integration: ON
@@ -31,4 +31,11 @@ var PortfolioApp = window.PortfolioApp || {};
 //      4. deploy
 
 // API Gateway -> APIs -> [name of project] -> stages -> invoke url
-PortfolioApp.apiEndpoint = 'https://pq9fi4niyb.execute-api.us-east-1.amazonaws.com/prod';
+
+
+
+// this is the API Gateway to the s3 bucket
+PortfolioApp.s3ApiEndpoint = 'https://pq9fi4niyb.execute-api.us-east-1.amazonaws.com/prod';
+
+// this is the API Gateway to the rds
+PortfolioApp.rdsApiEndpoint = 'https://520lnmijm2.execute-api.us-east-1.amazonaws.com/prod'
