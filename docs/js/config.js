@@ -38,4 +38,5 @@ var PortfolioApp = window.PortfolioApp || {};
 PortfolioApp.s3ApiEndpoint = 'https://pq9fi4niyb.execute-api.us-east-1.amazonaws.com/prod';
 
 // this is the API Gateway to the rds
-PortfolioApp.rdsApiEndpoint = 'https://520lnmijm2.execute-api.us-east-1.amazonaws.com/prod'
+// PortfolioApp.rdsApiEndpoint = 'https://520lnmijm2.execute-api.us-east-1.amazonaws.com/prod'
+PortfolioApp.rdsApiEndpoint = 'https://nf95i3uem6.execute-api.us-east-1.amazonaws.com/prod'

@@ -29,8 +29,8 @@ var PortfolioApp = window.PortfolioApp || {};
         })
 
 
-        queryPayload = "show Tables;"
-        $.get(this.rdsApiEndpoint, {query: queryPayload}).done(function (data) {
+        queryPayload = "use BoxOfficeMaxTV;"
+        $.get(PortfolioApp.rdsApiEndpoint, {query: queryPayload}).done(function (data) {
             console.log("query result:", data)
         })
     }    
