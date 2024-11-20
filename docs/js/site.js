@@ -27,16 +27,18 @@ var PortfolioApp = window.PortfolioApp || {};
                 '<div class = "slide"><h1>' + data.title + '</h1><p>' + data.description + '</p></div>'
             )
         })
+    }    
 
-
+    PortfolioApp.loadRdsQuery = function () {
+        
         queryPayload = encodeURIComponent("use BoxOfficeMaxTV;");
-        $.get(PortfolioApp.rdsApiEndpoint + `/query=${queryPayload}`)
+        $.get(PortfolioApp.rdsApiEndpoint + `?query=${queryPayload}`)
             .done(function (data) {
                 console.log("query result:", data)
             })
             .fail(function(err) {
                 console.error("error in query:", err);
             })
-    }    
+    }
 
 }(jQuery));
