@@ -18,6 +18,9 @@ var PortfolioApp = window.PortfolioApp || {};
 //      15. save
 //      16. test
 
+// API Gateway creation with proxy resource: off
+//      17. the actual invoke url is [invoke url]/[stage]/
+
 // CORS tutorial:
 //      1. click on /{proxy+}
 //      2. enable CORS
@@ -38,6 +41,4 @@ var PortfolioApp = window.PortfolioApp || {};
 PortfolioApp.s3ApiEndpoint = 'https://pq9fi4niyb.execute-api.us-east-1.amazonaws.com/prod';
 
 // this is the API Gateway to the rds
-// PortfolioApp.rdsApiEndpoint = 'https://520lnmijm2.execute-api.us-east-1.amazonaws.com/prod'
-// PortfolioApp.rdsApiEndpoint = 'https://lgcrw9lmg8.execute-api.us-east-1.amazonaws.com/prod/getData'
-PortfolioApp.rdsApiEndpoint = 'https://xky3t6uo7b.execute-api.us-east-1.amazonaws.com/prod/'
+PortfolioApp.rdsApiEndpoint = 'https://f7s6mda87j.execute-api.us-east-1.amazonaws.com/prod/databaseQ';
