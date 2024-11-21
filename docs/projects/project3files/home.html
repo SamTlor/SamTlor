@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        
+        <link rel = "stylesheet" href = "style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<style>
+		
+		body {
+            background-image: url('https://images.pexels.com/photos/10526896/pexels-photo-10526896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+            color: black;
+		}
+		</style>
+
+    </head>
+
+    <body>
+
+        <button type = "submit"><a href = "logout.php">Logout</a></button>
+        <button type = "submit"><a href = "queries.php">Queries</a></button>
+        
+        <!-- begin which table question -->
+        <form id="tableForm">
+            <label for="whichTable">Choose which table you want to display:</label>
+            <select name="whichTable" id="whichTable" required>
+                <option disabled selected value="">--Select an option--</option>
+                <option value="Movies">Movies</option>
+                <option value="Studios">Studios</option>
+                <option value="Actors">Actors</option>
+                <option value="Directors">Directors</option>
+                <option value="Awarders">Awarders</option>
+                <option value="Awards">Awards</option>
+            </select>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <!-- end which table question -->
+
+        <!-- begin which table result -->
+        <div id="queryResult" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; display: none;">
+            <h3>Query Result</h3>
+            <pre id="queryOutput"></pre>
+        </div>
+        <!-- end which table result -->
+
+        <!-- begin which table submission javascript -->
+        <script src="../../js/config.js"></script>
+        <script src="../../js/site.js"></script>
+        <script>
+            /*
+            document.getElementById('tableForm').addEventListener('submit', function(event) {
+                
+                // get the which table form value
+                const selectedTable = document.getElementById('whichTable').value;
+                if (selectedTable) {
+                    queryPayload = `SELECT * FROM ${selectedTable};`;
+
+                    $.get(`${PortfolioApp.rdsApiEndpoint}?query=${queryPayload}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('queryOutput').textContent = JSON.stringify(data, null, 2);
+                            document.getElementById('queryResult').style.display = 'block';
+                        })
+                        .catch(error => {
+                            console.error("Error in query:", error);
+                            alert("Failed to load query results. Please try again.")
+                        });
+                } else {
+                    alert("Please select a table before submitting.");
+                }
+            });
+
+
+            console.log(fetch())
+            */
+            
+            // Function to display the query results
+            function displayQueryResult(data) {
+                const resultContainer = document.getElementById("queryResult");
+                const queryOutput = document.getElementById("queryOutput");
+
+                // Show the result container and clear any previous content
+                resultContainer.style.display = "block";
+                queryOutput.innerHTML = "";
+
+                if (data.length === 0) {
+                    queryOutput.innerHTML = "<p>No results found</p>";
+                    return;
+                }
+
+                // Convert the result data into a table format
+                const table = document.createElement("table");
+                table.border = "1";
+
+                // Create table headers
+                const headers = Object.keys(data[0]);
+                const headerRow = table.insertRow();
+                headers.forEach(header => {
+                    const headerCell = headerRow.insertCell();
+                    headerCell.textContent = header;
+                    headerCell.style.fontWeight = "bold";
+                });
+
+                // Populate the table rows
+                data.forEach(row => {
+                    const rowElement = table.insertRow();
+                    headers.forEach(header => {
+                        const cell = rowElement.insertCell();
+                        cell.textContent = row[header];
+                    });
+                });
+
+                // Append the table to the query output area
+                queryOutput.appendChild(table);
+            }
+
+
+
+            // Handle form submission
+            document.getElementById("tableForm").addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting the default way
+
+                const selectedTable = document.getElementById("whichTable").value;
+                if (selectedTable) {
+                    // Construct the SQL query dynamically
+                    const query = `SELECT * FROM ${selectedTable}`;
+                    // Call the loadRdsQuery function from site.js with the query and the callback
+                    window.PortfolioApp.loadRdsQuery(query, displayQueryResult);
+                }
+            });
+        </script>
+        <!-- end which table submission javascript -->
+    </body>
+
+</html>
