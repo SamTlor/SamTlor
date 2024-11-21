@@ -2,6 +2,7 @@ var PortfolioApp = window.PortfolioApp || {};
 
 (function scopeWrapper($) {
     var s3ApiEndpoint = PortfolioApp.s3ApiEndpoint;
+    var rdsApiEndpoint = PortfolioApp.rdsApiEndpoint;
 
     // these functions make calls to Project-Proxy.mjs
     // Project-Proxy gets data from the s3 bucket called samtlorportfoliobucket
@@ -29,12 +30,24 @@ var PortfolioApp = window.PortfolioApp || {};
         })
     }    
 
-    PortfolioApp.loadRdsQuery = function () {
-        
-        queryPayload = encodeURIComponent("use BoxOfficeMaxTV;");
-        $.get(PortfolioApp.rdsApiEndpoint + `?query=${queryPayload}`)
+    // these functions make calls to index.mjs
+    // index gets data from the rds
+    PortfolioApp.loadRdsQuery = function (queryPayload, callback) {
+        // make sure to use the database first in case it's "cold"
+        $.get(rdsApiEndpoint + `?query=${encodeURIComponent("USE BoxOfficeMaxTV;")}`)
+            .done(function (data) {
+                console.log("Use database result:", data)
+            })
+            .fail(function(err) {
+                console.error("Error connecting to database:", err);
+            })
+
+        // execute the query
+        queryPayload = encodeURIComponent(queryPayload);
+        $.get(rdsApiEndpoint + `?query=${queryPayload}`)
             .done(function (data) {
                 console.log("query result:", data)
+                if (callback) callback(data);
             })
             .fail(function(err) {
                 console.error("error in query:", err);
