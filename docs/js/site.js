@@ -30,9 +30,7 @@ var PortfolioApp = window.PortfolioApp || {};
         })
     }    
 
-    // these functions make calls to index.mjs
-    // index.mjs is on AWS LAMBDA and it gets data from the rds
-    PortfolioApp.loadRdsQuery = function (queryPayload, callbackFunction) {
+    PortfolioApp.loadRdsQuery = function (queryPayload, callback, retries = 5) {
         // make sure to use the database first in case it's "cold"
         $.get(rdsApiEndpoint + `?query=${encodeURIComponent("USE BoxOfficeMaxTV;")}`)
             .done(function (data) {
@@ -42,19 +40,26 @@ var PortfolioApp = window.PortfolioApp || {};
                 console.error("Error connecting to database:", err);
             })
 
-        // execute the query
-        queryPayload = encodeURIComponent(queryPayload);
-        $.get(rdsApiEndpoint + `?query=${queryPayload}`)
-            .done(function (data) {
-                console.log("query result:", data)
-                if (callbackFunction) callbackFunction(data);
-            })
-            .fail(function(err) {
-                console.error("error in query:", err);
-            })
-    }
+        // sometimes the database fails so we have to query again
+        const attemptQuery = (retryCount) => {
+            $.get(rdsApiEndpoint + `?query=${encodeURIComponent(queryPayload)}`)
+                .done(function (data) {
+                    console.log("Query result:", data);
+                    if (callback) callback(data);
+                })
+                .fail(function (err) {
+                    console.error("Query failed:", err);
+                    if (retryCount > 0) {
+                        console.log(`Retrying... (${retries - retryCount + 1})`);
+                        setTimeout(() => attemptQuery(retryCount - 1), 1000);
+                    }
+                });
+        };
+    
+        attemptQuery(retries);
+    };
 
-
+    
     // Function to display the query results
     PortfolioApp.displayQueryResult = function (data, elementId) {
         const queryOutput = document.getElementById(elementId);
