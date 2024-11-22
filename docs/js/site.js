@@ -31,8 +31,8 @@ var PortfolioApp = window.PortfolioApp || {};
     }    
 
     // these functions make calls to index.mjs
-    // index gets data from the rds
-    PortfolioApp.loadRdsQuery = function (queryPayload, callback) {
+    // index.mjs is on AWS LAMBDA and it gets data from the rds
+    PortfolioApp.loadRdsQuery = function (queryPayload, callbackFunction) {
         // make sure to use the database first in case it's "cold"
         $.get(rdsApiEndpoint + `?query=${encodeURIComponent("USE BoxOfficeMaxTV;")}`)
             .done(function (data) {
@@ -47,11 +47,50 @@ var PortfolioApp = window.PortfolioApp || {};
         $.get(rdsApiEndpoint + `?query=${queryPayload}`)
             .done(function (data) {
                 console.log("query result:", data)
-                if (callback) callback(data);
+                if (callbackFunction) callbackFunction(data);
             })
             .fail(function(err) {
                 console.error("error in query:", err);
             })
+    }
+
+
+    // Function to display the query results
+    PortfolioApp.displayQueryResult = function (data, elementId) {
+        const queryOutput = document.getElementById(elementId);
+        const queryContainer = queryOutput.parentElement;
+
+        // Show the result container and clear any previous content
+        queryContainer.style.display = "block";
+        queryOutput.innerHTML = "";
+
+        if (data.length === 0) {
+            queryOutput.innerHTML = "<p>No results found</p>";
+            return;
+        }
+
+        // Convert the result data into a table format
+        const table = document.createElement("table");
+        table.border = "1";
+        const headers = Object.keys(data[0]);
+        const headerRow = table.insertRow();
+        headers.forEach(header => {
+            const headerCell = headerRow.insertCell();
+            headerCell.textContent = header;
+            headerCell.style.fontWeight = "bold";
+        });
+
+        // Populate the table rows
+        data.forEach(row => {
+            const rowElement = table.insertRow();
+            headers.forEach(header => {
+                const cell = rowElement.insertCell();
+                cell.textContent = row[header];
+            });
+        });
+
+        // Append the table to the query output area
+        queryOutput.appendChild(table);
     }
 
 }(jQuery));
