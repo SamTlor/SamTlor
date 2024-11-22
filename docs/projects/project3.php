@@ -12,7 +12,7 @@
 				color:#FFFFFF;
 			}	
 			body {
-				background-image: url('https://images.pexels.com/photos/3709369/pexels-photo-3709369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+				background-image: url('../../img/movie_theater.jpeg');
 				background-repeat: no-repeat;
 				background-attachment: fixed;  
 				background-size: cover;
@@ -22,7 +22,6 @@
 	</head>
 	<body>
 		<h1>BoxOfficeMaxTV+</h1>
-		<?php include "project3files/dbconn.php" ?>
 		
 		<button type = "submit"><a href = "project3files/queries.php">Queries</a></button>
 		<button type = "submit"><a href = "project3files/home.php">Home</a></button>
@@ -61,6 +60,14 @@
       $(function () {
         window.PortfolioApp.loadProjectLinks();
       });
+
+      // logic to see if the user is logged in goes here
+      const isLoggedIn = false;
+      if (isLoggedIn) {
+        document.getElementById('loggedInMessage').style.display = 'block';
+      } else {
+        document.getElementById('loggedOutMessage').style.display = 'block';
+      }
 
     </script>
     <!-- end javascript -->

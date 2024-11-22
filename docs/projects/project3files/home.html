@@ -9,7 +9,7 @@
 		<style>
 		
 		body {
-            background-image: url('https://images.pexels.com/photos/10526896/pexels-photo-10526896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-image: url('../../img/movie_homepage.jpeg');
             background-repeat: no-repeat;
             background-attachment: fixed;  
             background-size: cover;
@@ -21,8 +21,7 @@
 
     <body>
 
-        <button type = "submit"><a href = "logout.php">Logout</a></button>
-        <button type = "submit"><a href = "queries.php">Queries</a></button>
+        <button type = "submit"><a href = "queries.html">Queries</a></button>
         
         <!-- begin which table question -->
         <form id="tableForm">
@@ -52,72 +51,6 @@
         <script src="../../js/config.js"></script>
         <script src="../../js/site.js"></script>
         <script>
-            /*
-            document.getElementById('tableForm').addEventListener('submit', function(event) {
-                
-                // get the which table form value
-                const selectedTable = document.getElementById('whichTable').value;
-                if (selectedTable) {
-                    queryPayload = `SELECT * FROM ${selectedTable};`;
-
-                    $.get(`${PortfolioApp.rdsApiEndpoint}?query=${queryPayload}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            document.getElementById('queryOutput').textContent = JSON.stringify(data, null, 2);
-                            document.getElementById('queryResult').style.display = 'block';
-                        })
-                        .catch(error => {
-                            console.error("Error in query:", error);
-                            alert("Failed to load query results. Please try again.")
-                        });
-                } else {
-                    alert("Please select a table before submitting.");
-                }
-            });
-
-
-            console.log(fetch())
-            */
-            
-            // Function to display the query results
-            function displayQueryResult(data) {
-                const resultContainer = document.getElementById("queryResult");
-                const queryOutput = document.getElementById("queryOutput");
-
-                // Show the result container and clear any previous content
-                resultContainer.style.display = "block";
-                queryOutput.innerHTML = "";
-
-                if (data.length === 0) {
-                    queryOutput.innerHTML = "<p>No results found</p>";
-                    return;
-                }
-
-                // Convert the result data into a table format
-                const table = document.createElement("table");
-                table.border = "1";
-
-                // Create table headers
-                const headers = Object.keys(data[0]);
-                const headerRow = table.insertRow();
-                headers.forEach(header => {
-                    const headerCell = headerRow.insertCell();
-                    headerCell.textContent = header;
-                    headerCell.style.fontWeight = "bold";
-                });
-
-                // Populate the table rows
-                data.forEach(row => {
-                    const rowElement = table.insertRow();
-                    headers.forEach(header => {
-                        const cell = rowElement.insertCell();
-                        cell.textContent = row[header];
-                    });
-                });
-
-                // Append the table to the query output area
-                queryOutput.appendChild(table);
-            }
 
 
 
@@ -127,14 +60,18 @@
 
                 const selectedTable = document.getElementById("whichTable").value;
                 if (selectedTable) {
-                    // Construct the SQL query dynamically
+                    // Construct the SQL query like this to avoid "Bobby tables" situations
                     const query = `SELECT * FROM ${selectedTable}`;
+
                     // Call the loadRdsQuery function from site.js with the query and the callback
-                    window.PortfolioApp.loadRdsQuery(query, displayQueryResult);
+                    window.PortfolioApp.loadRdsQuery(query, (data) => {
+                        window.PortfolioApp.displayQueryResult(data, "queryOutput");
+                    });
+                    
+                    
                 }
             });
         </script>
         <!-- end which table submission javascript -->
     </body>
-
 </html>
