@@ -1,4 +1,3 @@
-
 count = 0
         
 with open("C:/Users/samtl/OneDrive/Documents/zome_files/rust/advent_of_code/2022/day4/src/text.txt") as f:
