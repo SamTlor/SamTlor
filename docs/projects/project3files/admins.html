@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Administrator Menu</title>
+        <h1>Administrator Menu</h1>
+        <link rel = "stylesheet" href = "style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<style>
+			h1{
+				font-size:50px;
+				text-align:center;
+				padding-top:20px;
+				padding-bottom:20px;
+				color:#FFFFFF;
+			}	
+            body {
+                background-image: url('../../img/movie_homepage.jpeg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+                color: black;
+            }
+		</style>
+    </head>
+
+    <body>
+        <button type = "submit"><a href = "queries.html">Queries</a></button>
+		<button type = "submit"><a href = "home.html">Home</a></button>
+        
+        
+        <!-- begin which table question -->
+        <form id="tableForm">
+            <label for="whichTable">Which table you want to edit, delete, or update?</label>
+            <select name="whichTable" id="whichTable" required>
+                <option disabled selected value="">--Select an option--</option>
+                <option value="Movies">Movies</option>
+                <option value="Studios">Studios</option>
+                <option value="Actors">Actors</option>
+                <option value="Directors">Directors</option>
+                <option value="Awarders">Awarders</option>
+                <option value="Awards">Awards</option>
+            </select>
+            
+            <!-- TODO: get the information on the table so that i can display the column names -->
+            <!-- for each column name ask the user what to do with that info -->
+            <button type = "button" id="createBtn">Create</button>
+            <button type = "button" id="readBtn">Read</button>
+            <button type = "button" id="updateBtn">Update</button>
+            <button type = "button" id="deleteBtn">Delete</button>
+        </form>
+
+        <footer>
+            <p>Insert, Create, Delete, and View Tables using the options above.</p>
+        </footer>
+        <!-- end which table question -->
+
+        <!-- begin results -->
+        <div class = "query">
+            <div id = 'result' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
+        </div>
+        <!-- end results -->
+
+        <!-- begin javascript -->
+        <script src = "../../js/config.js"></script>
+        <script src = "../../js/site.js"></script>
+        <script>
+            const form = document.getElementById('tableForm');
+            const createBtn = document.getElementById('createBtn');
+            const readBtn = document.getElementById('readBtn');
+            const updateBtn = document.getElementById('updateBtn');
+            const deleteBtn = document.getElementById('deleteBtn');
+
+            const selectedTable = document.getElementById("whichTable").value;
+
+
+            createBtn.addEventListener('click', () => {
+                const displayQuery = `DESCRIBE ${selectedTable};`;
+
+                function handleAdminBehavior(table, queryOutput) {
+                    // Function to handle admin behavior and dynamically create a form not with string elements :(
+                    // 1) get the values to display and ask to edit from the table that is passed in
+                    // 2) create a form element using DOM elements and give it details like a css stylesheet
+                    // 3) create a main tag and the article tag
+                    // 4) fill the article tag with elements based on the values
+                    // 5) create submit button
+                    // 6) status message about whether the submit worked or not
+                    // 7) append submit to article, article to main, main to form, and form to the queryOutput tag
+                    // 8) make it so that the submit button will execute the create [table] query 
+
+
+
+                    // one
+                    const rows = Array.from(table.querySelectorAll("tr"));
+                    const values = rows
+                        .slice(2) // first row is column types, second row is primary key
+                        .map(row => {
+                            const firstCell = row.querySelector("td");
+                            return firstCell ? firstCell.textContent : null;
+                        })
+                        .filter(value => value !== null);
+
+                    // two
+                    const form = document.createElement("form");
+                    form.method = "post";
+                    form.action = "";
+                    const link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = "style.css";
+                    form.appendChild(link);
+
+                    // three
+                    const main = document.createElement("main");
+                    main.innerHTML = "<h1>Enter the New Information</h1>";
+                    const article = document.createElement("article");
+                    article.className = "browser";
+
+                    // four
+                    values.forEach(value => {
+                        const formElement = document.createElement("div");
+                        formElement.className = "form-element";
+
+                        const label = document.createElement("label");
+                        label.innerHTML = `<b>${value}</b>`;
+
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.name = value.replace(/\s+/g, "_"); // Replace spaces with underscores
+                        input.required = true;
+
+                        formElement.appendChild(label);
+                        formElement.appendChild(input);
+                        article.appendChild(formElement);
+                    });
+
+                    // five
+                    const submitButton = document.createElement("button");
+                    submitButton.type = "button";
+                    submitButton.textContent = "Submit";
+                    submitButton.id = "createSubmit";
+
+                    // six
+                    const statusMessage = document.createElement("p");
+                    statusMessage.id = "statusMessage";
+                    statusMessage.style.marginTop = "10px";
+                    statusMessage.style.fontWeight = "bold";
+
+                    // seven
+                    article.appendChild(submitButton);
+                    article.appendChild(statusMessage);
+                    main.appendChild(article);
+                    form.appendChild(main);
+                    queryOutput.appendChild(form);
+
+                    // eight
+                    submitButton.addEventListener("click", () => {
+                        const formInformation = new FormData(form);
+
+                        const conditions = Array.from(formInformation.entries())
+                            .map(([key, value]) => `${key} = '${value}'`)
+                            .join(' AND ');
+                        const query = `SELECT * FROM ${selectedTable} WHERE ${conditions}`;
+
+                        window.PortfolioApp.loadRdsQuery(query, (sqlResult) => {
+                            if (sqlResult.length === 1){
+                                statusMessage.textContent = "This Actor is already in the database";
+                            } else {
+                                console.log("this actor is not in the database yet");
+
+                                const keys = Array.from(formInformation.entries())
+                                    .map(([key, value]) => `${key}`)
+                                    .join(', ');
+                                    
+                                const vals = Array.from(formInformation.entries())
+                                    .map(([key, value]) => `'${value}'`)
+                                    .join(', ');
+
+                                const newQuery = `INSERT INTO ${selectedTable}(${keys}) VALUES (${vals});`;
+                                console.log(newQuery);
+                                window.PortfolioApp.loadRdsQuery(newQuery);
+                                statusMessage.textContent = "The database has been updated";
+                            }
+                        });
+                    })
+                }
+
+                // send the query to loadRdsQuery, tell it how to display with displayQueryResult
+                window.PortfolioApp.loadRdsQuery(displayQuery, (data) => {
+                    window.PortfolioApp.displayQueryResult(data, "result", handleAdminBehavior);
+                });
+            });
+
+            /*
+            readBtn.addEventListener('click', () => {
+                form.action = 'home.php';
+                form.submit();
+            });
+            */
+                
+            updateBtn.addEventListener('click', () => {
+            });
+                
+            /*
+            deleteBtn.addEventListener('click', () => {
+                form.action = 'Delete.php';
+                form.submit();
+            });
+            */
+        </script>
+        <!-- end javascript -->
+    </body>
+</html>

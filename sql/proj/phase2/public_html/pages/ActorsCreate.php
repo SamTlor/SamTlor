@@ -1,51 +1,52 @@
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     </head>
-<style>
-main {
-  margin: 0;
-  padding: 5px;
-  background-color: #000066;
-  color: #FA9600;
-}
 
-main > h1, p, .browser {
-  margin: 10px;
-  padding: 5px;
-}
+    <style>
+        main {
+        margin: 0;
+        padding: 5px;
+        background-color: #000066;
+        color: #FA9600;
+        }
 
-.browser {
-  background: #000066;
-}
+        main > h1, p, .browser {
+        margin: 10px;
+        padding: 5px;
+        }
 
-.browser > h2, p {
-  margin: 4px;
-  font-size: 90%;
-}
-</style>
+        .browser {
+        background: #000066;
+        }
+
+        .browser > h2, p {
+        margin: 4px;
+        font-size: 90%;
+        }
+    </style>
+
     <form method="post" action="" name="signup-form">
         <link rel="stylesheet" href="style.css">
         <main>
-    <h1>Enter the New Actor Information</h2>
-    <article class="browser">
-        <div class="form-element">
-            <label><b>Actor's Date of Birth</b></label>
-            <input type="date" name="Actors_DateofBirth" required />
-        </div>
-        <div class="form-element">
-            <label><b>Actor's Nationality</b></label>
-            <input type="text" name="Actors_Nationality" required />
-        </div>
-        <div class="form-element">
-            <label><b>Actor's Legal Name</b></label>
-            <input type="text" name="Actors_LegalName" required />
-        </div>
-        
-    </article>
-    </main>
+            <h1>Enter the New Actor Information</h2>
+            <article class="browser">
+                <div class="form-element">
+                    <label><b>Actor's Date of Birth</b></label>
+                    <input type="date" name="Actors_DateofBirth" required />
+                </div>
+                <div class="form-element">
+                    <label><b>Actor's Nationality</b></label>
+                    <input type="text" name="Actors_Nationality" required />
+                </div>
+                <div class="form-element">
+                    <label><b>Actor's Legal Name</b></label>
+                    <input type="text" name="Actors_LegalName" required />
+                </div>
+            </article>
+        </main>
     </form>
 
     <button type="submit" name="register" value="register">Insert Actor</button>

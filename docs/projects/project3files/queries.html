@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Hello from PHP sample DB connection app</title>
+        <h1>20 Queries</h1>
 		<link rel = "stylesheet" href = "style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<style>
@@ -20,177 +21,117 @@
 				color: black;
 			}
 		</style>
-
-        <h1>20 Queries</h1>
 	</head>
 
   
 
     <body>
-		<h1>BoxOfficeMaxTV+</h1>
-        
 		<button type = "submit"><a href = "home.html">Home</a></button>
+        <button type = "submit"><a href = "admins.html">Admin</a></button>
         
-
+        <!-- begin query list -->
         <div id = "queryList">
             <div class = "query">
                 <p><b>1)Do movies that get more awards have a bigger box office?</b></p>
-                <div id = 'result1' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result1' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
 
             <div class = "query">
                 <p><b>2)Do movies with a bigger budget have a bigger box office?</b></p>
-                <div id = 'result2' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result2' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>3)How much did the top 5 most awarded movies gross?</b></p>
-                <div id = 'result3' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result3' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>4)Which actors worked on this movie 'X-Men: Days of Future Past'?</b></p>
-                <div id = 'result4' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result4' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>5)Which director has won the most amount of awards?</b></p>
-                <div id = 'result5' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result5' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>6)Which movie has the highest gross?</b></p>
-                <div id = 'result6' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result6' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>7)Which directors have worked with which studio?</b></p>
-                <div id = 'result7' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result7' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>8)What are all the movies in the genre 'Drama'?</b></p>
-                <div id = 'result8' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result8' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>9)What is the genre, budget, and gross of the movie 'The Lego Movie'?</b></p>
-                <div id = 'result9' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result9' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>10)Which studio has the highest total gross for all of their movies?</b></p>
-                <div id = 'result10' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result10' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>11)What movies is Chris Pratt in?</b></p>
-                <div id = 'result11' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result11' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>12)Which studio has the biggest gap in box office?</b></p>
-                <div id = 'result12' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result12' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>13)What movies has Martin Charles Scorsese directed?</b></p>
-                <div id = 'result13' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result13' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>14)Which studio made the movie that won the most awards?</b></p>
-                <div id = 'result14' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result14' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>15)What is the movie with the longest title?</b></p>
-                <div id = 'result15' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result15' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>16)Who is the youngest director?</b></p>
-                <div id = 'result16' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result16' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>17)What is the movie with the highest gross made by a director not from United States?</b></p>
-                <div id = 'result17' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result17' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>18)All the movies that grossed more than 100 million USD</b></p>
-                <div id = 'result18' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result18' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>19)Which movie has won the most amount of awards?</b></p>
-                <div id = 'result19' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result19' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
-
-
                 
             <div class = "query">
                 <p><b>20)What is the movie with the highest budget in the database?</b></p>
-                <div id = 'result20' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
-                </div>
+                <div id = 'result20' class = 'query-result' style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
             </div>
         </div>
+        <!-- end query list -->
 
         <script src = "../../js/config.js"></script>
         <script src = "../../js/site.js"></script>

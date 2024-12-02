@@ -3,7 +3,7 @@
     include "dbconn.php";
     
 
-if (isset($_SESSION['user_id']) && isset($_SESSION['Username'])) {
+    if (isset($_SESSION['user_id']) && isset($_SESSION['Username'])) {
 ?>
     <!DOCTYPE html>
     <html>
