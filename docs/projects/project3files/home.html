@@ -22,6 +22,7 @@
     <body>
 
         <button type = "submit"><a href = "queries.html">Queries</a></button>
+        <button type = "submit"><a href = "admins.html">Admin</a></button>
         
         <!-- begin which table question -->
         <form id="tableForm">
@@ -51,9 +52,6 @@
         <script src="../../js/config.js"></script>
         <script src="../../js/site.js"></script>
         <script>
-
-
-
             // Handle form submission
             document.getElementById("tableForm").addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent the form from submitting the default way
@@ -67,8 +65,6 @@
                     window.PortfolioApp.loadRdsQuery(query, (data) => {
                         window.PortfolioApp.displayQueryResult(data, "queryOutput");
                     });
-                    
-                    
                 }
             });
         </script>

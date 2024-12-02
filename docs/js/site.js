@@ -30,38 +30,53 @@ var PortfolioApp = window.PortfolioApp || {};
         })
     }    
 
-    PortfolioApp.loadRdsQuery = function (queryPayload, callback, retries = 5) {
-        // make sure to use the database first in case it's "cold"
-        $.get(rdsApiEndpoint + `?query=${encodeURIComponent("USE BoxOfficeMaxTV;")}`)
-            .done(function (data) {
-                console.log("Use database result:", data)
-            })
-            .fail(function(err) {
-                console.error("Error connecting to database:", err);
-            })
 
-        // sometimes the database fails so we have to query again
-        const attemptQuery = (retryCount) => {
-            $.get(rdsApiEndpoint + `?query=${encodeURIComponent(queryPayload)}`)
+
+
+
+    // these functions send the queryPayload to the mysql database
+    // i send the 'use database' query first in case it's "cold"
+    // then it uses the callback variable which is a function to display the results 
+    // i hate using the retries but if the database isn't warm it doesn't work so yeah
+    PortfolioApp.loadRdsQuery = function (queryPayload, callback, retries = 15) {
+        return new Promise ((resolve, reject) =>{
+            $.get(rdsApiEndpoint + `?query=${encodeURIComponent("USE BoxOfficeMaxTV;")}`)
                 .done(function (data) {
-                    console.log("Query result:", data);
-                    if (callback) callback(data);
+                    console.log("Use database result:", data)
                 })
-                .fail(function (err) {
-                    console.error("Query failed:", err);
-                    if (retryCount > 0) {
-                        console.log(`Retrying... (${retries - retryCount + 1})`);
-                        setTimeout(() => attemptQuery(retryCount - 1), 1000);
-                    }
-                });
-        };
-    
-        attemptQuery(retries);
+                .fail(function(err) {
+                    console.error("Error connecting to database:", err);
+                    return reject(err);
+                })
+
+            // sometimes the database fails so we have to query again
+            const attemptQuery = (retryCount) => {
+                $.get(rdsApiEndpoint + `?query=${encodeURIComponent(queryPayload)}`)
+                    .done(function (data) {
+                        console.log("Query successful:", data);
+                        if (callback) {
+                            callback(data);
+                        }
+                        
+                        resolve(data);
+                    })
+                    .fail(function (err) {
+                        console.error("Query failed:", err);
+                        if (retryCount > 0) {
+                            console.log(`Retrying... (${retries - retryCount + 1})`);
+                            setTimeout(() => attemptQuery(retryCount - 1), 1000);
+                        } else {
+                            reject(err);
+                        }
+                    });
+            };
+        
+            attemptQuery(retries);
+        });
     };
 
-    
     // Function to display the query results
-    PortfolioApp.displayQueryResult = function (data, elementId) {
+    PortfolioApp.displayQueryResult = function (data, elementId, adminHandler) {
         const queryOutput = document.getElementById(elementId);
         const queryContainer = queryOutput.parentElement;
 
@@ -69,33 +84,40 @@ var PortfolioApp = window.PortfolioApp || {};
         queryContainer.style.display = "block";
         queryOutput.innerHTML = "";
 
-        if (data.length === 0) {
-            queryOutput.innerHTML = "<p>No results found</p>";
-            return;
+
+        // Convert the result data into a table format using template literals
+        const table = `
+            <table border="1">
+                <thead>
+                    <tr>
+                        ${Object.keys(data[0])
+                            .map(header => `<th style="font-weight: bold;">${header}</th>`)
+                            .join("")
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    ${
+                        data.map(row => `
+                            <tr>
+                                ${Object.keys(row)
+                                    .map(key => `<td>${row[key]}</td>`)
+                                    .join("")}
+                            </tr>
+                        `)
+                        .join("")
+                    }
+                </tbody>
+            </table>
+        `;
+        const tableContainer = document.createElement("div");
+        tableContainer.innerHTML = table;
+
+        if (adminHandler) {
+            adminHandler(tableContainer.firstElementChild, queryOutput);
+        } else {
+            queryOutput.appendChild(tableContainer.firstElementChild);
         }
-
-        // Convert the result data into a table format
-        const table = document.createElement("table");
-        table.border = "1";
-        const headers = Object.keys(data[0]);
-        const headerRow = table.insertRow();
-        headers.forEach(header => {
-            const headerCell = headerRow.insertCell();
-            headerCell.textContent = header;
-            headerCell.style.fontWeight = "bold";
-        });
-
-        // Populate the table rows
-        data.forEach(row => {
-            const rowElement = table.insertRow();
-            headers.forEach(header => {
-                const cell = rowElement.insertCell();
-                cell.textContent = row[header];
-            });
-        });
-
-        // Append the table to the query output area
-        queryOutput.appendChild(table);
     }
 
 }(jQuery));
