@@ -66,38 +66,19 @@
             const form = document.getElementById('tableForm');
             const selectedTable = document.getElementById("whichTable").value;
 
-            const createBtn = document.getElementById('createBtn');
-            const readBtn = document.getElementById('readBtn');
-            const updateBtn = document.getElementById('updateBtn');
-            const deleteBtn = document.getElementById('deleteBtn');
-
-
             // HELPER FUNCTIONS
-            function handleAdminBehavior(table, queryOutput, idToo, submissionHandler) {
+            function handleAdminBehavior(table, queryOutput, columns, submissionHandler) {
                 // this is a function to dynamically create a form with the names of different columns
 
-                // 1) get the values to display and ask to edit from the table that is passed in
-                // 2) create a form element using DOM elements and give it details like a css stylesheet
-                // 3) create a main tag and the article tag
-                // 4) fill the article tag with elements based on the values
-                // 5) create submit button
-                // 6) status message about whether the submit worked or not
-                // 7) append submit to article, article to main, main to form, and form to the queryOutput tag
-                // 8) make it so that the submit button will execute the query 
-
-
+                // 1) create a form element using DOM elements and give it details like a css stylesheet
+                // 2) create a main tag and the article tag
+                // 3) fill the article tag with elements based on the values
+                // 4) create submit button
+                // 5) status message about whether the submit worked or not
+                // 6) append submit to article, article to main, main to form, and form to the queryOutput tag
+                // 7) make it so that the submit button will execute the query 
 
                 // one
-                const rows = Array.from(table.querySelectorAll("tr"));
-                const values = rows
-                    .slice(idToo) // zeroth row is column types, first row is primary key, so idToo is 1 to show the id and 2 to not show it
-                    .map(row => {
-                        const firstCell = row.querySelector("td");
-                        return firstCell ? firstCell.textContent : null;
-                    })
-                    .filter(value => value !== null);
-
-                // two
                 const form = document.createElement("form");
                 form.method = "post";
                 form.action = "";
@@ -106,23 +87,23 @@
                 link.href = "style.css";
                 form.appendChild(link);
 
-                // three
+                // two
                 const main = document.createElement("main");
                 main.innerHTML = "<h1>Enter the New Information</h1>";
                 const article = document.createElement("article");
                 article.className = "browser";
 
-                // four
-                values.forEach(value => {
+                // three
+                columns.forEach(column => {
                     const formElement = document.createElement("div");
                     formElement.className = "form-element";
 
                     const label = document.createElement("label");
-                    label.innerHTML = `<b>${value}</b>`;
+                    label.innerHTML = `<b>${column}</b>`;
 
                     const input = document.createElement("input");
                     input.type = "text";
-                    input.name = value.replace(/\s+/g, "_"); // Replace spaces with underscores
+                    input.name = column.replace(/\s+/g, "_"); // Replace spaces with underscores
                     input.required = true;
 
                     formElement.appendChild(label);
@@ -130,26 +111,26 @@
                     article.appendChild(formElement);
                 });
 
-                // five
+                // four
                 const submitButton = document.createElement("button");
                 submitButton.type = "button";
                 submitButton.textContent = "Submit";
                 submitButton.id = "createSubmit";
 
-                // six
+                // five
                 const statusMessage = document.createElement("p");
                 statusMessage.id = "statusMessage";
                 statusMessage.style.marginTop = "10px";
                 statusMessage.style.fontWeight = "bold";
 
-                // seven
+                // six
                 article.appendChild(submitButton);
                 article.appendChild(statusMessage);
                 main.appendChild(article);
                 form.appendChild(main);
                 queryOutput.appendChild(form);
 
-                // eight
+                // seven
                 submitButton.addEventListener("click", () => {
                     submissionHandler(form);
                 })
@@ -158,7 +139,7 @@
 
             // EVENT LISTENERS
             // TODO: what if duplicate entry
-            createBtn.addEventListener('click', () => {
+            document.getElementById('createBtn').addEventListener('click', () => {
                 // 1) send a describe query to loadRdsQuery and tell it to use displayQueryResult to display 
                 // 2) a form that is created with the table and queryOutput elements created in ^^ (more details in site.js)
                 // 3) the form comes from handleAdminBehavior. it gets the right stuff from table and puts it in queryOutput
@@ -169,7 +150,16 @@
                 
                 window.PortfolioApp.loadRdsQuery(`DESCRIBE ${selectedTable};`, (data) => {
                     window.PortfolioApp.displayQueryResult(data, "result", (table, queryOutput) => {
-                        handleAdminBehavior(table, queryOutput, 2, (form) => {
+
+                        const columns = Array.from(table.querySelectorAll("tr"))
+                            .slice(2) // zeroth row is column types, first row is primary key, so slice 2
+                            .map(row => {
+                                const firstCell = row.querySelector("td");
+                                return firstCell ? firstCell.textContent : null;
+                            })
+                            .filter(column => column !== null);
+
+                        handleAdminBehavior(table, queryOutput, columns, (form) => {
                             const formInformation = new FormData(form);
 
                             const conditions = Array.from(formInformation.entries())
@@ -202,7 +192,7 @@
 
             });
 
-            readBtn.addEventListener('click', () => {
+            document.getElementById('readBtn').addEventListener('click', () => {
                 const displayQuery = `SELECT * FROM ${selectedTable};`;
 
                 if (selectedTable){
@@ -212,10 +202,22 @@
                 }
             });
             
-            updateBtn.addEventListener('click', () => {
+            document.getElementById('updateBtn').addEventListener('click', () => {
                 window.PortfolioApp.loadRdsQuery(`DESCRIBE ${selectedTable};`, (data) => {
                     window.PortfolioApp.displayQueryResult(data, "result", (table, queryOutput) => {
-                        handleAdminBehavior(table, queryOutput, 1, (form) => {
+
+                        
+                        const rows = Array.from(table.querySelectorAll("tr"));
+                        const columns = rows
+                            .slice(1) // zeroth row is column types, first row is primary key, so slice 1
+                            .map(row => {
+                                const firstCell = row.querySelector("td");
+                                return firstCell ? firstCell.textContent : null;
+                            })
+                            .filter(column => column !== null);
+
+
+                        handleAdminBehavior(table, queryOutput, columns, (form) => {
 
                             const formInformation = new FormData(form);
                             const conditions = Array.from(formInformation.entries())
@@ -234,13 +236,33 @@
 
             }); 
 
+            document.getElementById('deleteBtn').addEventListener('click', () => {
+                window.PortfolioApp.loadRdsQuery(`DESCRIBE ${selectedTable};`, (data) => {
+                    window.PortfolioApp.displayQueryResult(data, "result", (table, queryOutput) => {
+                        
+                        const rows = Array.from(table.querySelectorAll("tr"));
+                        const columns = rows
+                            .slice(1,2) // zeroth row is column types, first row is primary key, so slice 1
+                            .map(row => {
+                                const firstCell = row.querySelector("td");
+                                return firstCell ? firstCell.textContent : null;
+                            })
+                            .filter(column => column !== null);
 
-            /*
-            deleteBtn.addEventListener('click', () => {
-                form.action = 'Delete.php';
-                form.submit();
+                        handleAdminBehavior(table, queryOutput, columns, (form) => {
+
+                            const formInformation = new FormData(form);
+                            const conditions = Array.from(formInformation.entries())
+                                .map(([key, value]) => `${key} = '${value}'`)
+                                .join(', ');
+
+                            const newQuery = `DELETE FROM ${selectedTable} WHERE ${conditions};`;
+                            window.PortfolioApp.loadRdsQuery(newQuery);
+                            statusMessage.textContent = "The database has been updated";
+                        });
+                    });
+                });
             });
-            */
         </script>
         <!-- end javascript -->
     </body>
