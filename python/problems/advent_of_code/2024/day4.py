@@ -4,7 +4,7 @@ def part_one():
     page = []
     with open("day4.txt") as f:
         while line := f.readline().strip():
-            input
+            page.append(str(line))
             
             
         
