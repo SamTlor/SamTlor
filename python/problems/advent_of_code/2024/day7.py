@@ -1,51 +1,44 @@
+from operator import add, mul
+
+def helper(answer, nums, operations):
+    if len(nums) == 1:
+        return int(answer) == nums[0]
+    
+    a, b, *rest = nums
+    for op in operations:
+        if helper(answer, [op(a, b)] + rest, operations):
+            return answer
+    return 0
+
+
+
 def part_one():
-    def one_helper(answer, nums):
-        if len(nums) == 1:
-            return int(answer) == nums[0]
+    
         
-        if one_helper(answer - nums[-1], nums[:-1]):
-            return True
-        if answer % nums[-1] == 0 and one_helper(answer / nums[-1], nums[:-1]):
-            return True
-        return False
-
-
-
-    equations = {}
-    with open("day7.txt") as f:
-        while line := f.readline().strip():
-            key, values = line.split(":")
-            equations[int(key)] = list(map(int, values.split()))
-            
-            
-            
     ending = 0
-    totals = []
+    operations = [add, mul]
     for answer in equations:
-        if one_helper(answer, equations[answer]):
-            totals.append(answer)
-            ending += answer
+        if helper(answer[0], answer[1:], operations):
+            ending += answer[0]
             
-    print(sum(totals))
-    
-    
-            
-            
-
-            
+    print(ending)
 
 def part_two():
+    
+            
     ending = 0
-    with open("day3.txt") as f:
-        while line := f.readline().strip():  
+    def cat(a, b): return int(f"{a}{b}")
+    operations = [add, mul, cat]
+    for answer in equations:
+        if helper(answer[0], answer[1:], operations):
+            ending += answer[0]
             
-            return
-            
+    print(ending)
+    
+
+equations = []
+for line in open('day7.txt'):
+    equations.append(list(map(int, line.replace(':', '').split())))
+    
 part_one()
 part_two()
-
-
-
-
-
-
