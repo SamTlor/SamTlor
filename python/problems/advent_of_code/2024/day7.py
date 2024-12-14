@@ -18,8 +18,7 @@ def part_one():
     ending = 0
     operations = [add, mul]
     for answer in equations:
-        if helper(answer[0], answer[1:], operations):
-            ending += answer[0]
+        ending += helper(answer[0], answer[1:], operations)
             
     print(ending)
 
@@ -30,8 +29,7 @@ def part_two():
     def cat(a, b): return int(f"{a}{b}")
     operations = [add, mul, cat]
     for answer in equations:
-        if helper(answer[0], answer[1:], operations):
-            ending += answer[0]
+        ending += helper(answer[0], answer[1:], operations)
             
     print(ending)
     
