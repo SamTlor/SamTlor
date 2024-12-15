@@ -1,4 +1,4 @@
-num_lookup = {}
+num_lookup = {0: 1}
 
 def helper(nums, iteration):
     if iteration < 25:
@@ -11,7 +11,7 @@ def helper(nums, iteration):
                 new_nums.append(1)
             elif num_len % 2 == 0:
                 new_nums.append(num // (10 ** (num_len // 2)))
-                new_nums.append(num % (10**(num_len // 2)))
+                new_nums.append(num % (10 ** (num_len // 2)))
             else:
                 new_nums.append(num * 2024)
         return helper(new_nums, iteration + 1)
@@ -27,7 +27,7 @@ def part_one():
 
 
 def helper_two(nums, iteration):
-    if iteration < 25:
+    if iteration < 50:
         new_nums = []
         
         for num in nums:
@@ -35,7 +35,7 @@ def helper_two(nums, iteration):
                 new_nums += num_lookup[num]
                 
             else:
-                
+                num_lookup[num] = 
         return helper_two(new_nums, iteration + 1)
     
 def part_two():
