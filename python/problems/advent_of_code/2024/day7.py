@@ -1,5 +1,3 @@
-from operator import add, mul
-
 def helper(answer, nums, operations):
     if len(nums) == 1:
         return int(answer) == nums[0]
@@ -9,30 +7,19 @@ def helper(answer, nums, operations):
         if helper(answer, [op(a, b)] + rest, operations):
             return answer
     return 0
-
-
-
-def part_one():
-    ending = 0
-    operations = [add, mul]
-    for answer in equations:
-        ending += helper(answer[0], answer[1:], operations)
-            
-    print(ending)
-
-def part_two():
-    ending = 0
-    def cat(a, b): return int(f"{a}{b}")
-    operations = [add, mul, cat]
-    for answer in equations:
-        ending += helper(answer[0], answer[1:], operations)
-            
-    print(ending)
     
+equations = [list(map(int, line.replace(':', '').split())) for line in open('day7.txt')]
 
-equations = []
-for line in open('day7.txt'):
-    equations.append(list(map(int, line.replace(':', '').split())))
-    
-part_one()
-part_two()
+one_ending, two_ending = 0, 0
+operations = [
+    lambda a, b: a + b,
+    lambda a, b: a * b,
+    lambda a, b: int(f"{a}{b}")
+]
+
+for answer in equations:
+    one_ending += helper(answer[0], answer[1:], operations[:2])
+    two_ending += helper(answer[0], answer[1:], operations)
+
+print(one_ending)
+print(two_ending)
