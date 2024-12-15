@@ -2,8 +2,6 @@ def dfs(grid, height, width, visited, allPaths, thisPath, one = True):
     if one and (height,width) in visited:
         return 
     
-    
-    
     # Add to the visited set
     visited.add((height, width))
     thisPath.append((height, width))
@@ -31,11 +29,10 @@ def dfs(grid, height, width, visited, allPaths, thisPath, one = True):
 
 
 # Reading inputs
-grid = []
-lines = open("day10.txt").read().strip().split("\n")
-for line in lines:
-    grid.append([int(char) if char.isdigit() else '.' for char in line])
-starting_points = [(i, j) for i in range(len(grid)) for j in range(len(grid[0])) if grid[i][j] == 0]
+grid = [[int(char) if char.isdigit() else '.' for char in line] 
+         for line in open("day10.txt").read().strip().split("\n")]
+starting_points = [(i, j) for i in range(len(grid)) 
+                   for j in range(len(grid[0])) if grid[i][j] == 0]
 
 all_paths_one, all_paths_two = [], []
 for x, y in starting_points:
