@@ -13,8 +13,6 @@ def helper(answer, nums, operations):
 
 
 def part_one():
-    
-        
     ending = 0
     operations = [add, mul]
     for answer in equations:
@@ -23,8 +21,6 @@ def part_one():
     print(ending)
 
 def part_two():
-    
-            
     ending = 0
     def cat(a, b): return int(f"{a}{b}")
     operations = [add, mul, cat]
