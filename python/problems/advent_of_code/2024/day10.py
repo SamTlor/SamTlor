@@ -10,16 +10,16 @@ def dfs(grid, height, width, visited, allPaths, thisPath, one = True):
     if grid[height][width] == 9:
         allPaths.append(list(thisPath))
     else:
-        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            nx, ny = height + dx, width + dy
-            if (0 <= nx < len(grid) and 0 <= ny < len(grid[0]) and 
-                grid[nx][ny] == grid[height][width] + 1):
+        for changeH, changeW in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            newH, newW = height + changeH, width + changeW
+            if (0 <= newH < len(grid) and 0 <= newW < len(grid[0]) and 
+                grid[newH][newW] == grid[height][width] + 1):
                 
                 if one:
-                    if (nx, ny) not in visited:
-                        dfs(grid, nx, ny, visited, allPaths, thisPath, one=True)
+                    if (newH, newW) not in visited:
+                        dfs(grid, newH, newW, visited, allPaths, thisPath, one=True)
                 else:
-                    dfs(grid, nx, ny, visited, allPaths, thisPath, one=False)
+                    dfs(grid, newH, newW, visited, allPaths, thisPath, one=False)
                     
         visited.remove((height, width))
 
