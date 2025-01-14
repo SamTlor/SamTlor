@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "title": "Junior Developer",
+            "company": "MicroHealth LLC",
+            "tasks": "Built AI assistants and implemented APIs. Collaberated with coworkers to debug and add imporovements to company websites.",
+            "tags": ["Typescript", "React JS", "Docker", "AWS", "Postgres"],
+            "year": "2024"
+        },
+        {
+            "title": "Intern",
+            "company": "Web Traits Inc.",
+            "tasks": "Researched and implemented SMTP server solutions to enhance email reliability and speed. Designed a system for automatic Excel file updates.",
+            "tags": ["C#", "Visual Basic", ".NET"],
+            "year": "2022"
+        },
+        {
+            "title": "Student",
+            "company": "VCU",
+            "tasks": "Developed foundational skills in many programming languages and techniques like Data Science. For my senior project I worked with NASA to predict Solar Wind conditions.",
+            "tags": ["Java", "Linux", "C", "SQL", "Python"],
+            "year": "2021"
+        }
+    ]
+}
