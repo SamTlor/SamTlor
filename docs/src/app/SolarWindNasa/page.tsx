@@ -26,7 +26,7 @@ export default function SolarWindNasa() {
                                     
                                     # Using Machine Learning to Predict Solar Wind Conditions
 
-                                    To build a model capapble of predicting solar wind conditions at the asteroid for NASA's Psyche mission, we have to first retrieve good training data. To first start off, we need a good foundational dataset we can work with, which is the following.
+                                    To build a model capapble of predicting solar wind conditions at the asteroid for NASA&apos;s Psyche mission, we have to first retrieve good training data. To first start off, we need a good foundational dataset we can work with, which is the following.
                                     - Data set consisting of data from an earth orbiting spacecraft at 1 AU and other data from another spacecraft further than 1 AU.
 
                                     Unfortunatlely, we cannot stop here because of time delay. Time delay causes the data from an earth orbiting spacecraft at 1 AU to not have any correlation with the other spacecraft data to start off with. Because of this, a majority of the project had to be spent on finding a way to use the data we gather and find the correlation between the two spacecraft at different AU.
@@ -46,7 +46,7 @@ export default function SolarWindNasa() {
                                     ### Building the Machine Learning Model
                                                 Now that we have correlated data, this data can be used as training data to build a machine learning model to predict solar wind conditions. Data at OMNI (Earth Satellite) will be used as features to predict conditions at Voyager such as Speed, Density, Velocity, Magnetic Field, etc. 
 
-                                    Ideally, all of the correlated dataset generated above will be used as training data, but for the purpose of testing this process, 5 random splits are conducted (5-fold cross validation) where most of the data will be training data, and some of it will be validation data. Because the values that our model is trying to predict are discrete, we use a linear regression algorithm and r^2 score to measure the model's performance.
+                                    Ideally, all of the correlated dataset generated above will be used as training data, but for the purpose of testing this process, 5 random splits are conducted (5-fold cross validation) where most of the data will be training data, and some of it will be validation data. Because the values that our model is trying to predict are discrete, we use a linear regression algorithm and r^2 score to measure the model&apos;s performance.
                                 </p>
                             </article>
                         </div>
