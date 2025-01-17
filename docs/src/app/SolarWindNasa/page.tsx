@@ -1,0 +1,70 @@
+import About from "@/component/layout/About";
+import Footer from "@/component/layout/Footer";
+import Hero from "@/component/layout/Hero";
+import Navbar from "@/component/layout/Navbar";
+import Projects from "@/component/layout/Projects";
+import Services from "@/component/layout/Services";
+import '../globals.css'
+import BurgerMenu from "@/component/menu/BurgerMenu";
+import Modal from "@/component/layout/Modal";
+import { GlobalStateProvider } from "@/contexts/GlobalStateContext";
+
+export default function SolarWindNasa() {
+    return (
+        
+        <GlobalStateProvider >
+            <Modal />
+            <div className="bg-slate-800" id="About">
+                <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
+                <a href="/">Go back home</a>
+                <div className="flex justify-center items-center text-white">
+                    <div className="flex flex-row w-full">
+                        {/* left */}
+                        <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
+                            <article className="desktop:text-xl mobile:text-md" itemScope >
+                                <p className="mb-5">
+                                    
+                                    # Using Machine Learning to Predict Solar Wind Conditions
+
+                                    To build a model capapble of predicting solar wind conditions at the asteroid for NASA's Psyche mission, we have to first retrieve good training data. To first start off, we need a good foundational dataset we can work with, which is the following.
+                                    - Data set consisting of data from an earth orbiting spacecraft at 1 AU and other data from another spacecraft further than 1 AU.
+
+                                    Unfortunatlely, we cannot stop here because of time delay. Time delay causes the data from an earth orbiting spacecraft at 1 AU to not have any correlation with the other spacecraft data to start off with. Because of this, a majority of the project had to be spent on finding a way to use the data we gather and find the correlation between the two spacecraft at different AU.
+
+
+                                    ### Our Method of Getting Correlated Data
+                                    We used a method known as window sliding to give us a dataset we could use where the data from an earth orbiting satellite had correlation with data from another spacecraft. This method consisted of the following steps. Consider window 1 to be data from an earth orbiting satellite, and window 2 to be data from another spacecraft.
+                                    1. Have window 1 slide back 1 hour at a time until it reaches a certain max hour of sliding. Each time it slides, compare this data with data at window 2 by calculating the difference in measurement (in this case, we use velocity to show a working example) and represent this difference as a percentage relative to other windows. 
+                                    2. For all the times window 1 slid back, find the window that had the highest percentage, and this will represent the best correlated window 1 with window 2. Store the data for each window in a dataset.
+                                    3. Slide window 2 n hours (n being the length of the window). For example, if window 2 has a length of 336 rows, that means that window 2 has 2 weeks of data, so slide window 2 in 2 week increments.
+                                    4. Repeat steps 1-3 until the end of the data is reached
+
+
+
+
+
+                                    ### Building the Machine Learning Model
+                                                Now that we have correlated data, this data can be used as training data to build a machine learning model to predict solar wind conditions. Data at OMNI (Earth Satellite) will be used as features to predict conditions at Voyager such as Speed, Density, Velocity, Magnetic Field, etc. 
+
+                                    Ideally, all of the correlated dataset generated above will be used as training data, but for the purpose of testing this process, 5 random splits are conducted (5-fold cross validation) where most of the data will be training data, and some of it will be validation data. Because the values that our model is trying to predict are discrete, we use a linear regression algorithm and r^2 score to measure the model's performance.
+                                </p>
+                            </article>
+                        </div>
+
+
+                        {/* right */}
+                        <div className="desktop:flex mobile:hidden w-1/2 flex-col pl-10 space-y-6">
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniPioneer10.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniPioneer11.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniVoyager1.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniVoyager2.png" alt="Portrait"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <Footer />
+            
+        </GlobalStateProvider>
+    );
+}

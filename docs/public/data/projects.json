@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "title": "This Very Website",
+            "image": "/images/website_img.png",
+            "link": "PortfolioDetails",
+            "tags": ["Next.js", "Typescript", "Tailwind CSS", "AWS"],
+            "text": "A portfolio website with that highlights professional work and utilizes AWS services"
+        },
+        {
+            "title": "BoxOfficeMaxTv+",
+            "image": "/images/psyche16pic.jpg",
+            "link": "BoxOfficeMaxTv",
+            "tags": ["SQL", "HTML", "CSS"],
+            "text": "A website to demonstrate an understanding of SQL concepts with a movie database"
+        },
+        {
+            "title": "Solar Wind Conditions at Psyche 16",
+            "image": "/images/psyche16pic.jpg",
+            "link": "SolarWindNasa",
+            "tags": ["Pandas", "Machine Learning", "Data Visualization"],
+            "text": "A visualization of data based on values recorded from satellites orbiting Earth"
+        },
+        {
+            "title": "Spotify Adder",
+            "image": "/images/spotify_raspberryPi.png",
+            "link": "SpotifyAdder",
+            "tags": ["Python", "Flask", "Linux"],
+            "text": "A custom alarm clock that randomly selects a song for me to wake up to every day"
+        }
+    ]
+}
