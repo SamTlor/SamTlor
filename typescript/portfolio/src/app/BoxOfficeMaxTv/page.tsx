@@ -18,7 +18,7 @@ export default function BoxOfficeMaxTV() {
             <Modal />
             <div className="bg-slate-800" id="About">
                 <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
-                <a href="/">Go back home</a>
+                <a href="/#Projects">Go back home</a>
                 <div className="flex justify-center items-center text-white">
                     <div className="flex flex-row w-full">
                         {/* left */}
