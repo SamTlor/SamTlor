@@ -1,17 +1,11 @@
 'use client'
 
-import { fetchUrl } from "@/lib/utils";
+import { db } from "@/db";
 
-// export async function GetViews(slug: string): Promise<number | null> {
-export async function GetViews({slug}: {slug: string}){
-    try {
-        const response = await fetch(`${fetchUrl}/page-views?slug=${slug}`);
-        if (!response.ok) throw new Error("Failed to fetch view count");
-        
-        const data = await response.json();
-        return data.view_count;
-    } catch (error) {
-        console.error("Error fetching view count:", error);
-        return null;
-    }
+export default async function GetViews({ slug }: { slug: string }) {
+    const project = await db.projects.findUnique({
+        where: { slug: slug },
+    });
+
+    return <div className="mt-4 text-sm text-gray-400">{project?.view_count ?? 0} views</div>;
 }

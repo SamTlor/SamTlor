@@ -1,11 +1,9 @@
 import Tag from "./Tag";
 import { useEffect } from "react";
-import { GetViews } from "@/component/GetViews";
+import GetViews from "@/component/GetViews";
 
 // this is the project when it appears on the home screen
 function Project ({ title, image, text, tags, slug }: { title: string, image: string, text: string, tags: string[], slug: string }) {
-    
-    
     return (
         <a href={slug} aria-label={text}>
             <div className="flex flex-col transition-all hover:scale-105 scale-100 bg-opacity-20 bg-black rounded-lg max-h-max max-w-96 m-3 text-white">
@@ -15,7 +13,7 @@ function Project ({ title, image, text, tags, slug }: { title: string, image: st
                 
                 <div className="p-4">
                     <div className="text-xl font-medium mb-4">{title}</div>
-                    
+                    <GetViews slug={slug} />
                     <p>{text}</p>
                     <ul className="mt-2 flex flex-wrap" aria-label="Technologies used:">
                         {tags.map((item, index) =>
