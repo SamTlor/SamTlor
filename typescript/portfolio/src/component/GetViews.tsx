@@ -1,5 +1,3 @@
-'use client'
-
 import { db } from "@/db";
 
 export default async function GetViews({ slug }: { slug: string }) {
