@@ -8,6 +8,7 @@ export async function GET(){
 // if there's not a project in the database with the slug and title the function is given create one
 // otherwise increment the view_count for the project
 export async function POST(request: Request){
+    console.log("Test");
     const {slug, title } = await request.json();
 
     try{
