@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import Tag from "./Tag";
+import { useEffect } from "react";
 import { GetViews } from "@/component/GetViews";
 
 // this is the project when it appears on the home screen
