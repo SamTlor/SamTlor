@@ -9,11 +9,13 @@ function Projects() {
             <div className="flex flex-wrap w-full desktop:px-20 justify-center">
                 {getProjects().map((project) =>
                     <Project 
+                        key = {project.slug}
                         title = {project.metadata.title} 
                         image = {project.metadata.image} 
                         text = {project.metadata.text} 
                         tags = {project.metadata.tags} 
-                        slug = {project.slug} />
+                        slug = {project.slug} 
+                    />
                 )}
             </div>
         </div>
