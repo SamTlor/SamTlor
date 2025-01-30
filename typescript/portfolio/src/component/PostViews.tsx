@@ -21,6 +21,5 @@ export default function PostViews({title, slug}: {title: string, slug: string}) 
         postData();
     }, [title, slug]);
 
-
     return <></>;
 };
