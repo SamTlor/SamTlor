@@ -1,29 +1,11 @@
-import About from "@/component/layout/About";
-import Footer from "@/component/layout/Footer";
-import Hero from "@/component/layout/Hero";
-import Navbar from "@/component/layout/Navbar";
-import Projects from "@/component/layout/Projects";
-import Services from "@/component/layout/Services";
-import '../globals.css'
-import BurgerMenu from "@/component/menu/BurgerMenu";
-import Modal from "@/component/layout/Modal";
-import { GlobalStateProvider } from "@/contexts/GlobalStateContext";
+---
+title: "Solar Wind Conditions at Psyche 16"
+image: "/images/psyche16pic.jpg"
+text: "A visualization of data based on values recorded from satellites orbiting Earth"
+tags: ["Pandas", "Machine Learning", "Data Visualization"]
+---
 
-export default function SolarWindNasa() {
-    return (
-        
-        <GlobalStateProvider >
-            <Modal />
-            <div className="bg-slate-800" id="About">
-                <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
-                <a href="/#Projects">Go back home</a>
-                <div className="flex justify-center items-center text-white">
-                    <div className="flex flex-row w-full">
-                        {/* left */}
-                        <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
-                            <article className="desktop:text-xl mobile:text-md" itemScope >
-                                <p className="mb-5">
-                                    
+
                                     # Using Machine Learning to Predict Solar Wind Conditions
 
                                     To build a model capapble of predicting solar wind conditions at the asteroid for NASA&apos;s Psyche mission, we have to first retrieve good training data. To first start off, we need a good foundational dataset we can work with, which is the following.
@@ -47,24 +29,10 @@ export default function SolarWindNasa() {
                                                 Now that we have correlated data, this data can be used as training data to build a machine learning model to predict solar wind conditions. Data at OMNI (Earth Satellite) will be used as features to predict conditions at Voyager such as Speed, Density, Velocity, Magnetic Field, etc. 
 
                                     Ideally, all of the correlated dataset generated above will be used as training data, but for the purpose of testing this process, 5 random splits are conducted (5-fold cross validation) where most of the data will be training data, and some of it will be validation data. Because the values that our model is trying to predict are discrete, we use a linear regression algorithm and r^2 score to measure the model&apos;s performance.
-                                </p>
-                            </article>
-                        </div>
 
 
-                        {/* right */}
-                        <div className="desktop:flex mobile:hidden w-1/2 flex-col pl-10 space-y-6">
-                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniPioneer10.png" alt="Portrait"/>
-                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniPioneer11.png" alt="Portrait"/>
-                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniVoyager1.png" alt="Portrait"/>
-                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="./images/solarWindsOmniVoyager2.png" alt="Portrait"/>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-            <Footer />
-            
-        </GlobalStateProvider>
-    );
-}
+                                                                <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="../images/solarWindsOmniPioneer10.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="../images/solarWindsOmniPioneer11.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="../images/solarWindsOmniVoyager1.png" alt="Portrait"/>
+                            <img className="w-4/5 mobile:w-full mobile:max-w-xl object-contain self-center" src="../images/solarWindsOmniVoyager2.png" alt="Portrait"/>

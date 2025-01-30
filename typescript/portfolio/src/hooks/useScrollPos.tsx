@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const UseScrollFade = () => {
+const UseScrollPos = () => {
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const UseScrollFade = () => {
   return isAtTop;
 };
 
-export default UseScrollFade;
+export default UseScrollPos;
