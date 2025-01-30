@@ -9,6 +9,9 @@ import BurgerMenu from "@/component/menu/BurgerMenu";
 import { GlobalStateProvider } from "@/contexts/GlobalStateContext";
 import Modal from "@/component/layout/Modal";
 
+import { getProjects } from "./utils";
+
+
 export default function Home() {
   return (
     <GlobalStateProvider >
