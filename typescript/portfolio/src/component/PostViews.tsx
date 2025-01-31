@@ -6,6 +6,7 @@ import { fetchUrl } from "@/lib/utils";
 export default function PostViews({title, slug}: {title: string, slug: string}) {
     useEffect(() => {
         const postData = async() => {
+            console.log("Test");
             try{
                 await fetch(fetchUrl, {
                     method: "POST",
