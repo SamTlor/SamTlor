@@ -7,7 +7,9 @@ function Projects() {
             <img className="w-full h-44" src="/transitions/transition_grey.svg" alt="transition" />
             <p className="flex text-4xl my-8 justify-center text-white font-bold">Featured Projects</p>
             <div className="flex flex-wrap w-full desktop:px-20 justify-center">
-                {getProjects().map((project) =>
+                {getProjects()
+                .filter((project) => project.metadata.title != "NotFound")
+                .map((project) =>
                     <Project 
                         key = {project.slug}
                         title = {project.metadata.title} 

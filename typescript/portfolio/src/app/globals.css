@@ -29,3 +29,8 @@ body {
 * {
   scroll-behavior: smooth !important;
 }
+
+.blockquote > #note::before {
+  content: "#";
+  padding: 5px;
+}
