@@ -16,7 +16,7 @@ function Hero() {
                         <div className='flex mobile:hidden mt-6 justify-start w-[17vw]'><SocialMedia size={200} /></div>
                     </div>
 
-                    <img className="w-1/5 mobile:w-full mobile:max-w-xl object-contain self-center animate-scalepulse" src="images/samPicture.jpg" alt="Portrait"/>
+                    <img className="w-1/5 mobile:w-full mobile:max-w-xl object-contain self-center animate-scalepulse" src="/images/samPicture.jpg" alt="Portrait"/>
 
                 </div>
                 <div className="desktop:absolute desktop:bottom-10 inset-0 flex items-end py-2 justify-center z-10">
