@@ -1,0 +1,16 @@
+.page {
+    background-image: url('/images/boxOfficeHomepage.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    color: black;
+    min-height: 100vh;
+}
+
+.heading {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+}

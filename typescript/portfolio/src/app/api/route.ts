@@ -11,11 +11,11 @@ export async function POST(request: Request){
     const {slug, title } = await request.json();
 
     try{
-        const existingPost = await db.projects.findUnique({
+        const existingProject = await db.projects.findUnique({
             where: {slug: slug},
         });
 
-        if (!existingPost) {
+        if (!existingProject) {
             await db.projects.create({
                 data: {
                     slug: slug,
@@ -32,8 +32,8 @@ export async function POST(request: Request){
         }
     } catch(error){
         console.error("Error updating page view: ", error);
-        return new Response("failed to post to DB", { status: 500});
+        return new Response("failed to update DB", { status: 500});
     }
 
-    return new Response("Succesfully posted to DB", { status: 200 });
+    return new Response("Succesfully updated DB", { status: 200 });
 };
