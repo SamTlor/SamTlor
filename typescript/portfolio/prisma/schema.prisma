@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 // prisma/schema.prisma
@@ -14,12 +15,16 @@ datasource db {
   url  	    = env("DATABASE_URL")
 }
 
+
+
+
+/**************************
+* WEBSITE SPECIFIC TABLES *
+**************************/
 model users {
   id            Int       @id @default(autoincrement())
-  updated_at    DateTime  @default(now())
-  created_at    DateTime  @default(now())
-  email         String  
-  name          String  
+  username      String    @unique
+  password      String
 }
 
 model projects {
@@ -27,4 +32,118 @@ model projects {
   slug          String    @unique
   title         String
   view_count    Int       @default(1)
+}
+
+
+
+
+
+
+
+/*****************************
+* TABLES TO BE SHOWN TO USER *
+*****************************/
+model actors{	
+  actors_id	          Int       @id @default(autoincrement())
+  actors_dateofbirth	DateTime
+  actors_nationality	String
+  actors_legalname	  String
+}
+
+model awards{
+  awards_id	Int       @id @default(autoincrement())
+  awards_name	String
+
+}	
+
+model awarders{
+  awarders_id	Int       @id @default(autoincrement())
+  awarders_datecreated DateTime
+  awarders_country	String
+  awarders_name	String
+
+}	
+
+model directors{
+  directors_id	Int       @id @default(autoincrement())
+  directors_dateofbirth	DateTime
+  directors_nationality	String
+  directors_legalname	String
+}	
+
+model movies{
+  movies_id	Int       @id @default(autoincrement())
+  movies_filmname	String
+  movies_genre	String
+  movies_gross	BigInt
+  movies_budget	Int
+}	
+
+model studios{
+  studios_id	Int       @id @default(autoincrement())
+  studios_datefounded	DateTime
+  studios_tradename	String
+}	
+
+
+
+
+/*********************
+* ASSOCIATION TABLES *
+*********************/
+model moviedirectors{	
+  moviedirectors_id	Int       @id @default(autoincrement())
+  movies_id	Int
+  directors_id	Int
+}
+
+
+model awardergivesaward{	
+  awardergivesawards_id	Int       @id @default(autoincrement())
+  awarders_id	Int
+  awards_id	Int
+}
+
+model actorawards	{
+  actorawards_id	    Int       @id @default(autoincrement())
+  actors_id	          Int
+  awards_id	          Int
+}
+
+model movieawards{
+	movieawards_id	Int       @id @default(autoincrement())
+  movies_id	Int
+  awards_id	Int
+}
+
+
+model directorawards{
+  directorawards_id	Int       @id @default(autoincrement())
+  directors_id	Int
+  awards_id	Int
+}
+
+
+model actorsinmovies{
+  actorsinmovies_id	Int       @id @default(autoincrement())
+  actors_id	Int
+  movies_id	Int
+}
+
+model studiosmademovies {
+  studiosmademovies_id	Int       @id @default(autoincrement())
+  studios_id	Int
+  movies_id	Int
+}
+
+model actorshiredbystudios{	
+  actorshiredbystudios_id	    Int       @id @default(autoincrement())
+  actors_id	                  Int
+  studios_id	                Int
+}
+
+model studioshireddirectors {
+  studioshireddirectors_id	Int       @id @default(autoincrement())
+  studios_id	Int
+  directors_id	Int
 }

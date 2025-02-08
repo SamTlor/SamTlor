@@ -14,3 +14,11 @@
     padding-bottom: 20px;
     color: #FFFFFF;
 }
+
+/* TODO: figure out why this doesn't work when it's in the styles.queryResult thing in page */
+.queryResult {
+    margin-top: "20px";
+    border: "1px solid #ccc";
+    padding: "10px";
+    display: "block";
+}
