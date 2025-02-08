@@ -1,4 +1,4 @@
-// these are functions for the website. they read and process data so that it can be displayed
+// these are functions for the entire website. they read and process data so that it can be displayed
 
 
 

@@ -1,10 +1,15 @@
 'use client'
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { fetchUrl } from "@/lib/utils";
 
 export default function PostViews({title, slug}: {title: string, slug: string}) {
+    const hasPosted = useRef(false);
+
     useEffect(() => {
+        if (hasPosted.current) return;
+        hasPosted.current = true;
+
         const postData = async() => {
             try{
                 await fetch(fetchUrl, {
@@ -21,5 +26,5 @@ export default function PostViews({title, slug}: {title: string, slug: string}) 
         postData();
     }, [title, slug]);
 
-    return <></>;
+    return null;
 };

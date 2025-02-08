@@ -1,35 +1,72 @@
 import { db } from "@/db";
 
-export async function GET(){
-    return new Response("Hello", { status: 200 });
+
+// get the table name from the url of the api get request
+// if it's in the db get the data from that table
+// otherwise assume it's a view and query the database
+export async function GET(req: Request){
+    try {
+        const { searchParams } = new URL(req.url);
+        const tableName = searchParams.get("table");
+        const viewName = searchParams.get("view");
+        
+        if (tableName){
+            if (tableName in db){
+                const tableData = await (db as any)[tableName].findMany();
+                return Response.json(tableData, { status: 200 })
+            }
+        } 
+        
+        else if (viewName){
+            const viewData = await db.$queryRawUnsafe(`SELECT * FROM ${viewName}`);
+
+            return new Response(JSON.stringify(viewData, (_, v) => 
+                typeof v === "bigint" ? v.toString() : v
+            ), { status: 200 });
+        }
+
+        return Response.json({ error: "Name is required" }, { status: 400 });
+
+    } catch(error){
+        console.error("Get api failed: ", error);
+        return Response.json(`Get api failed: ${error}`, { status: 500 })
+    }
 }
+
 
 
 // if there's not a project in the database with the slug and title the function is given create one
 // otherwise increment the view_count for the project
 export async function POST(request: Request){
-    const {slug, title } = await request.json();
 
-    try{
-        const existingProject = await db.projects.findUnique({
+    try {
+        const {slug, title } = await request.json();
+        // const existingProject = await db.projects.findUnique({
+        //     where: {slug: slug},
+        // });
+
+        // if (!existingProject) {
+        //     await db.projects.create({
+        //         data: {
+        //             slug: slug,
+        //             title: title,
+        //         }
+        //     });
+        // } else {
+        //     await db.projects.update({
+        //         where: {slug: slug},
+        //         data: {
+        //             view_count: { increment: 1 },
+        //         }
+        //     });
+        // }
+
+        await db.projects.upsert({
             where: {slug: slug},
-        });
+            update: {view_count: { increment: 1}},
+            create: {slug: slug, title: title, view_count: 1}
+        })
 
-        if (!existingProject) {
-            await db.projects.create({
-                data: {
-                    slug: slug,
-                    title: title,
-                }
-            });
-        } else {
-            await db.projects.update({
-                where: {slug: slug},
-                data: {
-                    view_count: { increment: 1 },
-                }
-            });
-        }
     } catch(error){
         console.error("Error updating page view: ", error);
         return new Response("failed to update DB", { status: 500});

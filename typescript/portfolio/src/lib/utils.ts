@@ -2,12 +2,8 @@ export const fetchUrl = process.env.NODE_ENV === 'development'
     ? "http://localhost:3000/api" 
     : "https://samtaylor.vercel.app/api";
 
-type ResponseProjectData = {
-    slug: string;
-    title: string;
-    view_count: Int16Array;
-}
+type FetcherResponse<T> = T[];
 
-export const projectFetcher = (
+export const fetcher = <T>(
     ...args: Parameters<typeof fetch>
-): Promise<ResponseProjectData> => fetch(...args).then((res) => res.json());
+): Promise<FetcherResponse<T>> => fetch(...args).then((res) => res.json());

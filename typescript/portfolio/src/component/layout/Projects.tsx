@@ -1,8 +1,9 @@
 import Project from "@/static/Project";
 import { getProjects } from "@/app/utils";
 
-function Projects() {
-    return <>
+export default function Projects() {
+    
+    return (
         <div id="Projects" className="bg-gradient-to-r from-gradientLeft to-gradientRight">
             <img className="w-full h-44" src="/transitions/transition_grey.svg" alt="transition" />
             <p className="flex text-4xl my-8 justify-center text-white font-bold">Featured Projects</p>
@@ -10,8 +11,7 @@ function Projects() {
                 {getProjects()
                 .filter((project) => project.metadata.title != "NotFound")
                 .map((project) =>
-                    <Project 
-                        key = {project.slug}
+                    <Project
                         title = {project.metadata.title} 
                         image = {project.metadata.image} 
                         text = {project.metadata.text} 
@@ -21,7 +21,5 @@ function Projects() {
                 )}
             </div>
         </div>
-    </>
+    );
 }
-
-export default Projects;
