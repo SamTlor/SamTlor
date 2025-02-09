@@ -4,6 +4,7 @@ import Arrow from "@/static/Arrow";
 import SocialMedia from "@/static/SocialMedia";
 import Typing from "@/static/Typing";
 import Link from "next/link";
+import Image from "next/image";
 
 function Hero() {
     return <>
@@ -16,7 +17,7 @@ function Hero() {
                         <div className='flex mobile:hidden mt-6 justify-start w-[17vw]'><SocialMedia size={200} /></div>
                     </div>
 
-                    <img className="w-1/5 mobile:w-full mobile:max-w-xl object-contain self-center animate-scalepulse" src="/images/samPicture.jpg" alt="Portrait"/>
+                    <Image className="w-1/5 mobile:w-full mobile:max-w-xl object-contain self-center animate-scalepulse" src="/images/samPicture.jpg" alt="Portrait"/>
 
                 </div>
                 <div className="desktop:absolute desktop:bottom-10 inset-0 flex items-end py-2 justify-center z-10">

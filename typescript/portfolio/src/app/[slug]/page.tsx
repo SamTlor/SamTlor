@@ -6,6 +6,7 @@ import Modal from "@/component/layout/Modal";
 import Navbar from "@/component/layout/Navbar";
 import BurgerMenu from "@/component/menu/BurgerMenu";
 import Footer from "@/component/layout/Footer";
+import Image from "next/image";
 
 import { CustomMDX } from "@/component/mdx";
 
@@ -29,11 +30,19 @@ export default function Page({ params }: {params: { slug: string }}){
                 <PostViews title={project.metadata.title} slug={project.slug} />
 
                 <div className="bg-slate-800" id="About">
-                    <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
+                    <Image className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
                     <a href="/#Projects">Go back home</a>
                     <div className="flex justify-center items-center text-white">
                         <div className="flex flex-row w-full">
                             
+
+
+
+
+
+
+
+
                             {/* left */}
                             {/* <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
                                 <article className="desktop:text-xl mobile:text-md" itemScope >
