@@ -70,7 +70,6 @@ export default function BoxOfficeMaxTvDemo() {
                 {error && <p>Failed to load: {error.message}</p>}
                 {data && <pre id="queryOutput">{
                     <div>
-                        <h2>Data Table</h2>
                         <DataTable data={data} /> 
                     </div>
                 }</pre>}

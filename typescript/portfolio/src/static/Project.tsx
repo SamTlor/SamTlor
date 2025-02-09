@@ -1,5 +1,6 @@
 import Tag from "./Tag";
 import GetViews from "@/component/GetViews";
+import Image from "next/image";
 
 // this is the project when it appears on the home screen
 export default function Project ({ title, image, text, tags, slug }: 
@@ -9,7 +10,7 @@ export default function Project ({ title, image, text, tags, slug }:
         <a href={slug} aria-label={text}>
             <div className="flex flex-col transition-all hover:scale-105 scale-100 bg-opacity-20 bg-black rounded-lg max-h-max max-w-96 m-3 text-white">
                 <div className="w-full h-64 bg-black rounded-t-lg flex justify-center items-center">
-                    <img className="w-full h-full object-contain" alt={text} src={image} />
+                    <Image className="w-full h-full object-contain" alt={text} src={image} />
                 </div>
                 
                 <div className="p-4">

@@ -41,25 +41,6 @@ export async function POST(request: Request){
 
     try {
         const {slug, title } = await request.json();
-        // const existingProject = await db.projects.findUnique({
-        //     where: {slug: slug},
-        // });
-
-        // if (!existingProject) {
-        //     await db.projects.create({
-        //         data: {
-        //             slug: slug,
-        //             title: title,
-        //         }
-        //     });
-        // } else {
-        //     await db.projects.update({
-        //         where: {slug: slug},
-        //         data: {
-        //             view_count: { increment: 1 },
-        //         }
-        //     });
-        // }
 
         await db.projects.upsert({
             where: {slug: slug},
