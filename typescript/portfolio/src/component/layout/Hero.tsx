@@ -39,7 +39,7 @@ function Hero() {
             <img 
                 src="/transitions/transition_grey.svg" 
                 alt="transition" 
-                className="object-cover w-full h-full mobile:scale-y-100 desktop:scale-y-[-1] block"
+                className="object-cover w-full h-full desktop:scale-y-[-1] block"
             />
         </div>
     </>
