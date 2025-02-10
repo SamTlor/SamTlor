@@ -13,7 +13,7 @@ function About() {
                 src="/transitions/transition_gradient.svg" 
                 alt="transition" 
                 fill
-                className="object-cover mobile:scale-y-[-1]"
+                className="object-cover mobile:scale-y-[-1] scale-x-[-1]"
                 priority
             />
         </div>
