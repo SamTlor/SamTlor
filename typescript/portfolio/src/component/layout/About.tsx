@@ -1,13 +1,23 @@
 import Summary from "@/static/Summary";
-import Timeline from "@/static/Timeline";import Image from "next/image";
-
+import Timeline from "@/static/Timeline";
+import Image from 'next/image';
 
 function About() {
     return <div className="bg-slate-800" id="About">
         {/* <div className="relative w-full h-44">
             <img className="w-full h-full object-cover" src="/transitions/transition_gradient.svg" alt="transition" />
         </div> */}
-        <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
+        {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
+
+        <Image 
+            src="/transitions/transition_gradient.svg" 
+            alt="transition" 
+            width={1920} 
+            height={200} 
+            className="w-full h-44 object-cover mobile:rotate-180"
+            priority
+        />
+
         <div className="flex justify-center items-center text-white">
             {/* <div className="flex flex-row w-full">
                 <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
