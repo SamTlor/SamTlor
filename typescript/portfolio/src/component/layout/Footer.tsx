@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Footer() {
     return <div className="bg-gradient-to-r from-gradientLeft to-gradientRight">
-        <Image className="w-full h-44" src="/transitions/transition_grey.svg" alt="transition" />
+        {/* <Image className="w-full h-44" src="/transitions/transition_grey.svg" alt="transition" /> */}
         <footer className="flex flex-col items-center">
             <div className="pt-5">
                 <SocialMedia size={35} />

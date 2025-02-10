@@ -10,6 +10,8 @@ import Image from "next/image";
 
 import { CustomMDX } from "@/component/mdx";
 
+// import TransitionGradient  from "@/transitions/transition_grey.svg";
+
 export default function Page({ params }: {params: { slug: string }}){
     
     // TODO: maybe use AWS for the getProjects function like just move all the mdx file to a s3 bucket
@@ -24,13 +26,11 @@ export default function Page({ params }: {params: { slug: string }}){
                 <Modal />
                 <BurgerMenu />
 
-                {/* PostViews updates the view_count but doesn't add text or anything */}
-                {/* TODO: it doesn't work when deployed on vercel */}
-                {/* npx prisma migrate dev --name init */}
                 <PostViews title={project.metadata.title} slug={project.slug} />
 
                 <div className="bg-slate-800" id="About">
-                    <Image className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
+                    {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
+                    {/* <TransitionGradient className="w-full h-44" /> */}
                     <a href="/#Projects">Go back home</a>
                     <div className="flex justify-center items-center text-white">
                         <div className="flex flex-row w-full">
