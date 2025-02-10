@@ -33,6 +33,14 @@ function About() {
                 </div>
             </div>
 
+            <div className="relative w-full h-34 bg-gradient-to-r from-gradientLeft to-gradientRight overflow-hidden">
+                <img 
+                    src="/transitions/transition_grey.svg" 
+                    alt="transition" 
+                    className="object-cover w-full h-full mobile:scale-y-100 desktop:scale-y-[-1] block"
+                />
+            </div>
+            {/* <img className="w-full h-44" src="/transitions/transition_grey.svg" alt="transition" /> */}
 
         </div>
     </div>
