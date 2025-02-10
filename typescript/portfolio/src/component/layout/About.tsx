@@ -7,16 +7,28 @@ function About() {
         <div className="relative w-full h-44">
             <img className="w-full h-full object-cover" src="/transitions/transition_gradient.svg" alt="transition" />
         </div>
-        {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
         <div className="flex justify-center items-center text-white">
-            <div className="flex flex-row w-full">
+            {/* <div className="flex flex-row w-full">
                 <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
                     <Summary />
                 </div>
                 <div className="desktop:flex mobile:hidden w-1/2 flex-col pl-10">
                     <Timeline />
                 </div>
+            </div> */}
+            
+
+            <div className="flex flex-col desktop:flex-row w-full">
+                <div className="flex desktop:w-1/2 w-full p-4 desktop:p-20 flex-col">
+                    <Summary />
+                </div>
+
+                <div className="flex desktop:w-1/2 w-full p-4 desktop:p-20 flex-col">
+                    <Timeline />
+                </div>
             </div>
+
+
         </div>
     </div>
 }
