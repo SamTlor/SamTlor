@@ -9,12 +9,10 @@ function About() {
         </div> */}
         {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
         <div className="relative w-full h-44">
-            <Image 
+            <img 
                 src="/transitions/transition_gradient.svg" 
                 alt="transition" 
-                fill
-                className="object-cover mobile:scale-y-[-1] scale-x-[-1]"
-                priority
+                className="object-cover mobile:scale-y-[-1]"
             />
         </div>
 
