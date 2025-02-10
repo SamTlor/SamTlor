@@ -8,15 +8,17 @@ function About() {
             <img className="w-full h-full object-cover" src="/transitions/transition_gradient.svg" alt="transition" />
         </div> */}
         {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
+        <div className="relative w-full h-44">
+            <Image 
+                src="/transitions/transition_gradient.svg" 
+                alt="transition" 
+                fill
+                className="object-cover mobile:scale-y-[-1]"
+                priority
+            />
+        </div>
 
-        <Image 
-            src="/transitions/transition_gradient.svg" 
-            alt="transition" 
-            width={1920} 
-            height={200} 
-            className="w-full h-44 object-cover mobile:rotate-180"
-            priority
-        />
+
 
         <div className="flex justify-center items-center text-white">
             {/* <div className="flex flex-row w-full">
