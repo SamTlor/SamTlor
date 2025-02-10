@@ -8,13 +8,7 @@ function About() {
             <img className="w-full h-full object-cover" src="/transitions/transition_gradient.svg" alt="transition" />
         </div> */}
         {/* <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" /> */}
-        <div className="relative w-full h-44">
-            <img 
-                src="/transitions/transition_gradient.svg" 
-                alt="transition" 
-                className="object-cover mobile:scale-y-[-1]"
-            />
-        </div>
+        
 
 
 

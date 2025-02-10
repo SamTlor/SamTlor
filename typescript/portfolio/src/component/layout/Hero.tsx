@@ -35,6 +35,13 @@ function Hero() {
                 </Link>
             </div>
         </div>
+        <div className="relative w-full h-34 bg-gradient-to-r from-gradientLeft to-gradientRight">
+            <img 
+                src="/transitions/transition_grey.svg" 
+                alt="transition" 
+                className="object-cover scale-y-[-1]"
+            />
+        </div>
     </>
 }
 
