@@ -3,7 +3,7 @@
         {
             "title": "Junior Developer",
             "company": "MicroHealth LLC",
-            "tasks": "Built AI assistants and implemented APIs. Collaberated with coworkers to debug and add imporovements to company websites.",
+            "tasks": "Built AI assistants and implemented APIs. Collaborated with coworkers to debug and improve company websites.",
             "tags": ["Typescript", "React JS", "Docker", "AWS", "Postgres"],
             "year": "2024"
         },
@@ -17,7 +17,7 @@
         {
             "title": "Student",
             "company": "VCU",
-            "tasks": "Developed foundational skills in many programming languages and techniques like Data Science. For my senior project I worked with NASA to predict Solar Wind conditions.",
+            "tasks": "Developed foundational skills in many programming languages and techniques, including data science. For my senior project I worked with NASA to predict solar wind conditions on asteroid Psyche 16.",
             "tags": ["Java", "Linux", "C", "SQL", "Python"],
             "year": "2021"
         }
