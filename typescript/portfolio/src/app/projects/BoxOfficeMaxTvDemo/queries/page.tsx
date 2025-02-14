@@ -44,7 +44,7 @@ export default function queriesPage() {
         >
             <h1 className={styles.heading}>BoxOfficeMaxTV+</h1>
             <button>
-                <Link href = "/projects/BoxOfficeMaxTvDemo">Home</Link>
+                <Link href = "/projects/BoxOfficeMaxTvDemo">Go back</Link>
             </button>
 
 

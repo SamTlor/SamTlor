@@ -52,6 +52,10 @@ export function getProjects(){
     return getMDXdata(path.join(process.cwd(), "src", "app", "projects"));
 }
 
+export function getProjectsWithAWS(){
+
+}
+
 export function formatDate(date: string, includeRelative = true){
     let currentDate = new Date();
     if(date.includes('T')){
