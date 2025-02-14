@@ -34,29 +34,6 @@ export default function Page({ params }: {params: { slug: string }}){
                     <a href="/#Projects">Go back home</a>
                     <div className="flex justify-center items-center text-white">
                         <div className="flex flex-row w-full">
-                            
-
-
-
-
-
-
-
-
-                            {/* left */}
-                            {/* <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
-                                <article className="desktop:text-xl mobile:text-md" itemScope >
-                                    <p className="mb-5">
-                                        title: {project.content}
-                                    </p>
-                                </article>
-                            </div> */}
-
-
-                            {/* right */}
-                            {/* <div className="desktop:flex mobile:hidden w-1/2 flex-col pl-10 space-y-6">
-                            </div> */}
-                            
                             <CustomMDX source={project.content}/>
                         </div>
                     </div>
