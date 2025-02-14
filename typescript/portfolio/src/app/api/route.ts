@@ -1,9 +1,7 @@
 import { db } from "@/db";
 
-
-// get the table name from the url of the api get request
-// if it's in the db get the data from that table
-// otherwise assume it's a view and query the database
+// get the tablename or viewname 
+// views aren't in the database so we select all from that view
 export async function GET(req: Request){
     try {
         const { searchParams } = new URL(req.url);
@@ -25,7 +23,7 @@ export async function GET(req: Request){
             ), { status: 200 });
         }
 
-        return Response.json({ error: "Name is required" }, { status: 400 });
+        return Response.json({ error: "Name is missing or incorrect" }, { status: 400 });
 
     } catch(error){
         console.error("Get api failed: ", error);

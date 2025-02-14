@@ -75,7 +75,7 @@ model movies{
   movies_id	Int       @id @default(autoincrement())
   movies_filmname	String
   movies_genre	String
-  movies_gross	BigInt
+  movies_gross	Int
   movies_budget	Int
 }	
 
