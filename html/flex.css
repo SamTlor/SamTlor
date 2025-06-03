@@ -1,0 +1,45 @@
+
+/* flex-grow, flex-shrink, flex-basis determine how the flex takes up space, grows or shrinks according to the space available*/
+/* you can use those values with shorthand flex: [grow] [shrink] [basis] */
+/* 
+.flex-container{
+    flex: 0 1 auto;
+} 
+*/
+
+
+.flex-container{
+    display: flex;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content */
+    justify-content: center;
+
+    /* flex-direction is row by default */
+    /* flex-wrap is nowrap by default */
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/align-items */
+    align-items: flex-end;
+
+    gap: 10px;
+}
+
+
+.box{
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 10px;
+}
+
+.box3 {
+    background-color: blanchedalmond;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/align-self */
+    align-self: center;
+}
+
+li:nth-of-type(2){
+    color: aqua;
+}
