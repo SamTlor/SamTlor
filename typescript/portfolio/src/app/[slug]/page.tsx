@@ -10,11 +10,9 @@ import Image from "next/image";
 
 import { CustomMDX } from "@/component/mdx";
 
-// import TransitionGradient  from "@/transitions/transition_grey.svg";
 
 export default function Page({ params }: {params: { slug: string }}){
     
-    // TODO: maybe use AWS for the getProjects function like just move all the mdx file to a s3 bucket
     const allProjects = getProjects();
     let project = allProjects.find((project) => project.slug === params.slug)
                 || allProjects.find((project) => project.slug === "NotFound");

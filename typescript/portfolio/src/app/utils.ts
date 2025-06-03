@@ -16,19 +16,16 @@ import matter from 'gray-matter';
 /********************************************
 * HELPER FUNCTIONS FOR THE EXPORT FUNCTIONS *
 ********************************************/
+// getMDXfiles and readMDXfile are helper functions for getMDXdata
+// They get and access the mdx files so getMDXdata can present the data and metadata
 
-// get mdx files from the contents directory 
 function getMDXfiles(dir: string) {
     return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
-
-// read the data from those files
 function readMDXfile(filepath: fs.PathOrFileDescriptor){
     let rawContent = fs.readFileSync(filepath, "utf-8");
     return matter(rawContent);
 }
-
-// present the data and metadata
 function getMDXdata(dir: string){
     let mdxFile = getMDXfiles(dir)
     return mdxFile.map((file) => {
@@ -50,10 +47,6 @@ function getMDXdata(dir: string){
 *******************/
 export function getProjects(){
     return getMDXdata(path.join(process.cwd(), "src", "app", "projects"));
-}
-
-export function getProjectsWithAWS(){
-
 }
 
 export function formatDate(date: string, includeRelative = true){

@@ -1,0 +1,37 @@
+.a{
+    margin: 30;
+
+    /* skew makes it like italics */
+    transform: skewX(20deg);
+
+    /* without transition any of the above will be how the page loads */
+    transition: 5s;
+}
+
+.b{
+    margin: 100px;
+
+    /* rotate just makes it normal */
+    transform: rotate(20deg);
+
+    
+    transition: 5s;
+}
+
+.box{
+    display: grid;
+    width: 240px;
+    height: 240px;
+    margin: 100px;
+    background-color: rgba(55, 255, 5, 0.5);
+    border-radius: 12px;
+    border: solid #6feb6f 4px;
+
+}
+
+.box:hover{
+    transform: rotateZ(60deg);
+    background-color: lightcoral;
+    opacity: 50%;
+    transition: 2s;
+}
