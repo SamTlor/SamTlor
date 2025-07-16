@@ -34,7 +34,7 @@ export default function BoxOfficeMaxTvDemo() {
 
             {/* begin navigation links  */}
             <div className="flex flex-col space-y-4 items-start pl-6">
-                <Link href="/BoxOfficeMaxTv" className="text-white text-lg hover:underline">
+                <Link href="/" className="text-white text-lg hover:underline">
                     Portfolio Home
                 </Link>
 
