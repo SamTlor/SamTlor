@@ -14,6 +14,10 @@ cd [project title]
 npm install
 npm run dev
 
+OR
+
+npx create-react-app [project title]
+
 
 
 
@@ -29,12 +33,12 @@ PROPS
 properties are react's version of parameters
 props are expected to be an object
 get object variables with dot notation
+props.[child] child is the name of the variable in the jsx that called 
 
 
 
 PROPS AND CHILDREN
-
-you can pass jsx elements as props
+you can pass jsx elements as props too
 function Bag(props) {
     return (
         <div>

@@ -1,4 +1,4 @@
-export default function modeToggler(){
+export default function handleClick(){
     
     // configurations 
     const darkModeOn = true;
