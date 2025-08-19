@@ -1,43 +1,39 @@
 Inline anonymous es5 functions
-
-<button onClick={function() {console.log('first example')}}>
-    An inline anonymous ES5 function event handler
-</button>
+    <button onClick={function() {console.log('first example')}}>
+        An inline anonymous ES5 function event handler
+    </button>
 
 
 
 Inline anonymous es6 functions
-
-<button onClick={() => console.log('second example')}>
-    An inline anonymous ES6 function event handler
-</button>
+    <button onClick={() => console.log('second example')}>
+        An inline anonymous ES6 function event handler
+    </button>
 
 
 
 Separate function declarations
+    export default function App() {
+        function thirdExample() {
+            console.log('third example');
+        };
 
-export default function App() {
-    function thirdExample() {
-        console.log('third example');
+        return (
+            <div className="thirdExample">
+                <button onClick={thirdExample}>using a separate function declaration</button>
+            </div>
+        );
     };
-
-    return (
-        <div className="thirdExample">
-            <button onClick={thirdExample}>using a separate function declaration</button>
-        </div>
-    );
-};
 
 
 
 separate function expressions
-
-export default function App() {
-    const fourthExample = () => console.log('fourth example');
-    
-    return (
-        <div className="fourthExample">
-            <button onClick={fourthExample}>using a separate function expression</button>
-        </div>
-    );
-};
+    export default function App() {
+        const fourthExample = () => console.log('fourth example');
+        
+        return (
+            <div className="fourthExample">
+                <button onClick={fourthExample}>using a separate function expression</button>
+            </div>
+        );
+    };
