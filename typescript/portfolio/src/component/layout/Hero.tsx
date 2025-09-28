@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function Hero() {
     return <>
-        <div className="flex items-center flex-col min-h-screen desktop:px-20 mobile:p-6 bg-cosmos">
+        <div className="flex items-center flex-col min-h-screen desktop:px-20 mobile:p-6 bg-greetings">
             <div className="flex mobile:justify-center desktop:flex-row desktop:items-center mobile:flex-col-reverse items-center w-full flex-1">
                 <div className="flex flex-col z-20 pointer-events-none text-white desktop:w-3/5 mobile:w-full mobile:text-center font-display">
                     <p className="desktop:text-[5vw] mobile:text-[8vw] font-bold text-lightcyan w-full">Greetings, I&apos;m Sam</p>
