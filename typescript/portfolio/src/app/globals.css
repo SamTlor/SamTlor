@@ -34,3 +34,9 @@ body {
   content: "#";
   padding: 5px;
 }
+
+@media (max-width: 640px) {
+  .group-mobile img {
+    transform: scaleY(-1);
+  }
+}

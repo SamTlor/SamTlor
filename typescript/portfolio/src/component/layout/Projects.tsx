@@ -7,7 +7,9 @@ export default function Projects() {
     return (
         <>
         <div id="Projects" className="bg-gradient-to-r from-gradientLeft to-gradientRight">
-            <img className="w-full h-34 md:scale-y-[-1]" src="/transitions/transition_grey.svg" alt="transition" />
+            <div className="group-mobile">
+                <img className="w-full h-34" src="/transitions/transition_grey.svg" alt="transition" />
+            </div>
             <p className="flex text-4xl my-8 justify-center text-white font-bold">Featured Projects</p>
             <div className="flex flex-wrap w-full desktop:px-20 justify-center">
                 {getProjects()
