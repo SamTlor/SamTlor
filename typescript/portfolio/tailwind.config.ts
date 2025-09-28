@@ -70,6 +70,8 @@ const config: Config = {
         lightcyan: '#84ffff',
         gradientLeft: '#8e24aa',
         gradientRight: '#1e88e5',
+      },
+      backgroundImage: {
         sunset: 'linear-gradient(to right, #ff7e5f, #feb47b)',
         cosmos: 'linear-gradient(to right, #8e2de2, #4a00e0)',
         aqua: 'linear-gradient(to right, #13547a, #80d0c7)',
