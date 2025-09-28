@@ -27,9 +27,10 @@ export default function Page({ params }: {params: { slug: string }}){
                 <PostViews title={project.metadata.title} slug={project.slug} />
 
                 <div className="bg-slate-800" id="About">
-                    <img className="w-full h-44" src="/transitions/transition_gradient.svg" alt="transition" />
-                    {/* <TransitionGradient className="w-full h-44" /> */}
-                    <a href="/#Projects">Go back home</a>
+                    {/* spacer for nav bar */}
+                    <div className="h-16"></div>
+                    
+                    <a href="/#Projects" className="">Go back home</a>
                     <div className="flex justify-center items-center text-white">
                         <div className="flex flex-row w-full">
                             <CustomMDX source={project.content}/>

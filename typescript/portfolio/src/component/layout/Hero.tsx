@@ -8,6 +8,9 @@ import Image from "next/image";
 
 function Hero() {
     return <div className="flex items-center flex-col min-h-screen desktop:px-20 bg-greetings">
+        {/* spacer for nav bar */}
+        <div className="h-16"></div>
+        
         <div className="flex mobile:justify-center desktop:flex-row desktop:items-center mobile:flex-col-reverse items-center w-full flex-1">
             <div className="flex flex-col z-20 pointer-events-none text-white desktop:w-3/5 mobile:w-full mobile:text-center font-display">
                 <p className="desktop:text-[5vw] mobile:text-[8vw] font-bold text-lightcyan w-full">Greetings, I&apos;m Sam</p>
@@ -35,7 +38,7 @@ function Hero() {
         
         
         {/* todo: fix this and make the nav bar be above your head on desktop */}
-        <div className="relative w-full">
+        {/* <div className="relative w-full">
             <div className="group-mobile">
                 <img 
                     src="/transitions/transition_grey.svg" 
@@ -43,8 +46,16 @@ function Hero() {
                     className="object-cover w-full h-full mobile:scale-y-[-1] desktop:scale-y-[1] block"
                 />
             </div>
-        </div>
+        </div> */}
+        
+        <img 
+            src="/transitions/transition_grey.svg" 
+            alt="transition" 
+            className="object-fill w-full h-32 mobile:scale-y-[-1] desktop:scale-y-[-1] block"
+        />
     </div>
+
 }
 
 export default Hero;
+
