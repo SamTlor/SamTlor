@@ -10,7 +10,7 @@ export default function Projects() {
             <div className="group-mobile">
                 <img className="w-full h-34" src="/transitions/transition_grey.svg" alt="transition" />
             </div>
-            <p className="flex text-4xl my-8 justify-center text-white font-bold">Featured Projects</p>
+            <p className="flex text-4xl my-8 justify-center backdrop-blur-xs shadow-glow text-white font-bold">Featured Projects</p>
             <div className="flex flex-wrap w-full desktop:px-20 justify-center">
                 {getProjects()
                 .filter((project) => project.metadata.title != "NotFound")
