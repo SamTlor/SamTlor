@@ -17,7 +17,7 @@ function Navbar() {
                 } 
             flex justify-end items-center h-14 w-full bg-gradient-to-r from-transparent to-black text-white`
         }>
-            <div className="flex justify-around text-lg w-1/2 items-center w-1/2 text-lg font-display">
+            <div className="flex justify-around text-lg w-1/2 items-center w-1/2 text-lg font-mono">
                 <MenuItem title={"About"} />
                 <MenuItem title={"Projects"} />
                 <MenuItem title={"Services"} />
