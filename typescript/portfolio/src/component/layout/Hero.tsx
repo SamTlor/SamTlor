@@ -35,7 +35,7 @@ function Hero() {
                 </Link>
             </div>
         </div>
-        <div className="relative w-full h-34 bg-cosmos overflow-hidden">
+        <div className="relative w-full h-34 bg-greetings overflow-hidden">
             <img 
                 src="/transitions/transition_grey.svg" 
                 alt="transition" 
