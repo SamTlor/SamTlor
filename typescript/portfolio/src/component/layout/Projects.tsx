@@ -7,7 +7,7 @@ export default function Projects() {
     return (
         <>
             <div id="Projects" className="bg-aqua">
-                <img className="w-full h-34" src="/transitions/transition_grey.svg" alt="transition" />
+                <img className="w-full h-32" src="/transitions/transition_grey.svg" alt="transition" />
                 <p className="flex text-4xl backdrop-blur-xs p-6">Featured Projects</p>
                 <div className="flex flex-wrap w-full desktop:px-20 justify-center">
                     {getProjects()
@@ -26,7 +26,7 @@ export default function Projects() {
             </div>
 
             {/* transitions to 'you have a job opening' */}
-            <div className="relative w-full h-34 bg-aqua overflow-hidden">
+            <div className="relative w-full h-32 bg-aqua overflow-hidden">
                 <div className="group-mobile">
                     <img 
                         src="/transitions/transition_grey.svg" 
