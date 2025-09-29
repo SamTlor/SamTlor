@@ -51,7 +51,7 @@ function Hero() {
         <img 
             src="/transitions/transition_grey.svg" 
             alt="transition" 
-            className="object-fill w-full h-32 mobile:scale-y-[-1] desktop:scale-y-[-1] block"
+            className="object-fill w-full h-32 mobile:scale-y-[1] desktop:scale-y-[-1] block"
         />
     </div>
 
