@@ -43,7 +43,7 @@ export default function BoxOfficeMaxTvDemo() {
                 </Link>
 
                 <Link href="/projects/BoxOfficeMaxTvDemo/queries" 
-                    className="px-6 py-3 bg-[#84ffff] text-black font-semibold text-lg rounded-full shadow-md hover:bg-black hover:text-white transition duration-300 ease-in-out text-center">
+                    className="px-6 py-3 bg-peach text-black font-semibold text-lg rounded-full shadow-md hover:bg-black hover:text-white transition duration-300 ease-in-out text-center">
                     🔍 Queries
                 </Link>
             </div>

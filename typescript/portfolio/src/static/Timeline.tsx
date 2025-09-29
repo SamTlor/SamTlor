@@ -17,7 +17,7 @@ function Timeline (){
           </div>
           
           <div className="flex flex-col justify-start h-max mt-5 px-6 text-white font-sans">
-            <div className="font-bold">{item.title + " @ "}<span className="text-[#84ffff] font-bold">{item.company}</span></div>
+            <div className="font-bold">{item.title + " @ "}<span className="text-peach font-bold">{item.company}</span></div>
             <div>{item.tasks}</div>
             <ul className="mt-1 flex flex-wrap" aria-label="Technologies used:">
               {item.tags.map((tag, index) =>

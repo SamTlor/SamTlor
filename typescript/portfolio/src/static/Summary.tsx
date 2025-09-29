@@ -1,7 +1,7 @@
 
 function Summary(){
     return (<>
-        <p className="text-4xl mb-8 bg-[#84ffff] text-black px-4 py-2 rounded-full inline font-display">
+        <p className="text-4xl mb-8 bg-peach text-black px-4 py-2 rounded-full inline font-display">
             About Me
         </p>
 
