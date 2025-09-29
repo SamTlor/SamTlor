@@ -7,7 +7,19 @@ export default function Projects() {
     return (
         <>
             <div id="Projects" className="bg-aqua">
-                <img className="w-full h-32" src="/transitions/transition_grey.svg" alt="transition" />
+                <img 
+                    src="/transitions/transition_grey.svg" 
+                    alt="transition" 
+                    className="object-fill w-full h-32 mobile:scale-y-[-1] desktop:scale-y-[1] block" 
+                />
+                {/*                 
+                    <img 
+                        src="/transitions/transition_grey.svg" 
+                        alt="transition" 
+                        className="object-fill w-full h-32 mobile:scale-y-[1] desktop:scale-y-[-1] block"
+                    /> 
+                */}
+                
                 <p className="flex text-4xl backdrop-blur-xs p-6">Featured Projects</p>
                 <div className="flex flex-wrap w-full desktop:px-20 justify-center">
                     {getProjects()
