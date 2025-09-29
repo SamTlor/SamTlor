@@ -36,18 +36,6 @@ function Hero() {
             </Link>
         </div>
         
-        
-        {/* todo: fix this and make the nav bar be above your head on desktop */}
-        {/* <div className="relative w-full">
-            <div className="group-mobile">
-                <img 
-                    src="/transitions/transition_grey.svg" 
-                    alt="transition" 
-                    className="object-cover w-full h-full mobile:scale-y-[-1] desktop:scale-y-[1] block"
-                />
-            </div>
-        </div> */}
-        
         <img 
             src="/transitions/transition_grey.svg" 
             alt="transition" 
