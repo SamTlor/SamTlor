@@ -14,7 +14,7 @@ function Typing() {
       wrapper="span"
       speed={10}
       preRenderFirstString={true}
-      style={{ marginLeft: '5px', fontSize: '1em', textAlign: 'left', color: "#84ffff", 
+      style={{ marginLeft: '5px', fontSize: '1em', textAlign: 'left', color: "#ffcba4", 
         fontWeight: 'bold', display: 'inline-block', width: '38.5%'}}
       repeat={Infinity}
     />

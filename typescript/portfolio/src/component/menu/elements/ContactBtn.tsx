@@ -22,7 +22,7 @@ const ContactBtn = ({title}:{title:string}) => {
     
     return (
         <button className='flex items-center cursor-pointer'>
-            <div aria-label={title} className={"transition ease-in-out duration-300 text-center bg-[#84ffff] text-black border-2 border-[#84ffff] rounded-3xl px-3 py-1 hover:bg-transparent hover:text-[#84ffff]"} onClick={handleClick} >
+            <div aria-label={title} className={"transition ease-in-out duration-300 text-center bg-tie text-black border-2 border-tie rounded-3xl px-3 py-1 hover:bg-transparent hover:text-tie"} onClick={handleClick} >
                 {title}
             </div>
         </button>

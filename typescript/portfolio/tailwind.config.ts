@@ -67,7 +67,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        lightcyan: '#84ffff',
+        lightcyan: '#84ffff', 
+        tie: '#b6d2ed',
+        yellow: '#fde992',
+        peach: '#ffcba4',
         gradientLeft: '#8e24aa',
         gradientRight: '#1e88e5',
       },
