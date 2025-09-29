@@ -1,6 +1,13 @@
 {
     "data": [
         {
+            "title": "Student",
+            "company": "GMU",
+            "tasks": "Created data visualizations and dashboards for various projects.",
+            "tags": ["R", "Matplotlib", "Pandas"],
+            "year": "2025"
+        },
+        {
             "title": "Junior Developer",
             "company": "MicroHealth LLC",
             "tasks": "Built AI assistants and implemented APIs. Collaborated with coworkers to debug and improve company websites.",
