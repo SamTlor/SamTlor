@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "title": "Student",
+            "title": "Data Analytics Student",
             "company": "GMU",
             "tasks": "Created data visualizations and dashboards for various projects.",
             "tags": ["R", "Matplotlib", "Pandas"],
