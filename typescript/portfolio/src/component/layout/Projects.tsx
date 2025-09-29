@@ -33,15 +33,6 @@ export default function Projects() {
 
             {/* transitions to 'you have a job opening' */}
             <div className="relative w-full h-32 bg-aqua overflow-hidden">
-                {/* <div className="group-mobile">
-                    <img 
-                        src="/transitions/transition_grey.svg" 
-                        alt="transition" 
-                        className="object-cover w-full h-full desktop:scale-y-[-1] block"
-                    />
-                </div> */}
-
-                        
                 <img 
                     src="/transitions/transition_grey.svg" 
                     alt="transition" 

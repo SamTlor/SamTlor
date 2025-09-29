@@ -4,7 +4,13 @@ import Image from "next/image";
 
 function Footer() {
     return <div className="bg-sunset">
-        <img className="w-full h-32" src="/transitions/transition_grey.svg" alt="transition" />
+        {/* transition from 'you have a job opening' to footer */}
+        <img 
+            src="/transitions/transition_grey.svg" 
+            alt="transition" 
+            className="object-fill w-full h-32 mobile:scale-y-[-1] desktop:scale-y-[1] block" 
+        />
+        
         <footer className="flex flex-col items-center">
             <div className="pt-5">
                 <SocialMedia size={35} />
