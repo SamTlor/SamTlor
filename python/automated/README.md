@@ -1,2 +1,3 @@
-- every one of these files has a .bat file with the same name that goes @python.exe C:/filepath/file.py%*
-- this makes it so that using "win + r" i can call these files to do something simple and tedious for me
+- Every one of these files has a corresponding .bat file on my local with the same name that goes @python.exe C:/filepath/file.py%*
+- This makes it so that using "win + r" i can call any of these files to do something simple and tedious for me
+- Automate the boring stuff by went brr when i was learning Python
