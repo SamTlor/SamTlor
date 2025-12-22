@@ -1,0 +1,7 @@
+1. decision trees
+2. support vector machines (svm)
+3. kmeans clustering
+4. partitional clustering
+5. hierarchical clustering
+6. density-based clustering
+7. association rules

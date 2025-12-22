@@ -1,0 +1,78 @@
+Decision Trees
+
+    versions:
+        ID3 algorithm (Interactive Dichotomizer)
+            simplest decision tree algorithm for discrete data
+            defines the foundation that was later used to develop other decision tree algorithms
+        C4.5
+            improvement of the ID3 algorithm
+                produces “less bushy” trees
+                handles missing values
+                handles continuous attributes
+        See5
+            improvement of the C4.5 algorithm
+                handling more attribute types: dates, timestamps, ordinal
+                use of boosting
+                    multi-classifier option where multiple trees are generated and combined to perform classification
+                use of winnowing
+                    discards attributes that appear to be only marginally relevant before tree is constructed
+
+
+    Constructs a decision tree from an input
+        grown in a top - down manner
+        shows hierarchical representation of the input data
+            representation of data is in the form of selectors: attribute -> value pairs
+            each node of the tree represents a selection of an attribute from the input data to be tested
+
+
+
+
+                                ------ 1 ---- unicycle
+                               /
+                              /                            ---- no ----- bicycle
+                             /                            /
+        number of wheels----|--------- 2 ---- engine ----<
+                            \                             \
+                             \                             ---- yes ---- motorcycle
+                              \
+                               \                                   ---- less than 4 ---- motorcycle
+                                \                                 /
+                                 ---- 4 ---- number of seats ----<
+                                                                  \
+                                                                   ---- 4 and above ---- car
+
+
+
+    how it works:
+        Input: learning set S, class set C, attribute set A
+        IF all examples in S belong to some class ci 
+            THEN make leaf labeled ci
+        OTHERWISE
+            1. aj =  “most informative” attribute
+            2. Sj = partition S according to aj values
+            3. go to step 1 using each Sj. recursively construct subtrees T1, T2, ..., for each Sj
+
+
+
+        most imformative attribute means highest shannon entropy
+        C = every class in S
+        i = certain class in C
+        N = total number of rows in S
+        p = number of rows in i / N
+        shannon entropy = 
+            sum (
+                for all i in C 
+                    (-p * log[base 2](p)) 
+            )
+
+
+    returns: 
+        1. IF (Estimate="0-10" AND Hungry="Yes") THEN Wait="Yes"
+        2. IF (Estimate="0-10" AND Hungry="No" AND Bar="Yes" AND Rain="Yes") THEN Wait="No"
+        3. IF (Estimate="0-10" AND Hungry="No" AND Bar="Yes" AND Rain="No") THEN Wait="Yes"
+        4. IF (Estimate="0-10" AND Hungry="No" AND Bar="No") THEN Wait="No"
+        5. IF (Estimate="10-30" AND Bar="Yes") THEN Wait="No"
+        6. IF (Estimate="10-30" AND Bar="No") THEN Wait="Yes"
+        7. IF (Estimate="30-60" AND Bar="Yes") THEN Wait="Yes"
+        8. IF (Estimate="30-60" AND Bar="No") THEN Wait="No"
+        9. IF (Estimate=">60") THEN Wait="No"
