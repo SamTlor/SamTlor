@@ -1,1 +1,0 @@
-C:\Users\samtl\OneDrive\Documents\1_personal\ stuff\job_search\personal_github\SamTlor\rust\basics\hello_world\target\debug\hello_world.exe: C:\Users\samtl\OneDrive\Documents\1_personal\ stuff\job_search\personal_github\SamTlor\rust\basics\hello_world\src\main.rs

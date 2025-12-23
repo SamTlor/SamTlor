@@ -1,4 +1,0 @@
-class Thief:
-    sneaky = True
-
-    
