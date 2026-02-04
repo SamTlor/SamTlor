@@ -2,4 +2,4 @@
 - 👀 I have experience as a software engineering intern and have just graduated with a 3.5 GPA in computer science.
 - 💞️ I would appreciate the opportunity to meet with you to discuss your goals and how I can help you meet them. I look forward to hearing from you in the near future. 
 - 📫 Contact me at sam.tlor1@gmail.com, by phone at (703) 969-6032, or on LinkedIn at https://www.linkedin.com/in/sam-tlor/
-- read more about me on my website: https://samtlor.github.io/samtlor1/
+- read more about me on my website: https://samtaylor.vercel.app
