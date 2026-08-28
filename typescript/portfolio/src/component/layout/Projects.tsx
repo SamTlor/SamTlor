@@ -1,43 +1,28 @@
 import Project from "@/static/Project";
 import { getProjects } from "@/app/utils";import Image from "next/image";
+import useEmblaCarousel from 'embla-carousel-react';
+import ProjectsCarousel from "@/static/ProjectCarousel";
+
 
 
 export default function Projects() {
-    
+    const projects = getProjects().filter((project) => project.metadata.title !== "NotFound")
+
     return (
         <>
-            <div id="Projects" className="bg-aqua">
-                {/* transitions from about me to featured projects */}
-                <img 
-                    src="/transitions/transition_grey.svg" 
-                    alt="transition" 
-                    className="object-fill w-full h-32 mobile:scale-y-[-1] desktop:scale-y-[1] block" 
-                />
-                
-                <p className="flex text-4xl backdrop-blur-xs p-6">Featured Projects</p>
-                <div className="flex flex-wrap w-full desktop:px-20 justify-center">
-                    {getProjects()
-                    .filter((project) => project.metadata.title != "NotFound")
-                    .map((project) =>
-                        <Project
-                            key = {project.metadata.id}
-                            title = {project.metadata.title} 
-                            image = {project.metadata.image} 
-                            text = {project.metadata.text} 
-                            tags = {project.metadata.tags} 
-                            slug = {project.slug} 
-                        />
-                    )}
+            <div id="Projects" className="bg-projects pt-16">
+                {/* page title */}
+                <div className="text-center mb-12">
+                    <p className="inline-block text-4xl bg-textHighlight text-black px-6 py-3 rounded-full font-display">
+                        Featured Projects
+                    </p>
                 </div>
-            </div>
 
-            {/* transitions to 'you have a job opening' */}
-            <div className="relative w-full h-32 bg-aqua overflow-hidden">
-                <img 
-                    src="/transitions/transition_grey.svg" 
-                    alt="transition" 
-                    className="object-fill w-full h-32 mobile:scale-y-[1] desktop:scale-y-[-1] block"
-                />
+                {/* project selector */}
+                <ProjectsCarousel projects={projects} />
+
+                {/* spacer for footer */}
+                <div className="hidden desktop:block h-16"></div>
             </div>
         </>
     );

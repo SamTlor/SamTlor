@@ -10,7 +10,7 @@ import Image from "next/image";
 
 import { CustomMDX } from "@/component/mdx";
 
-
+// this is the page you get when you click on a project
 export default function Page({ params }: {params: { slug: string }}){
     
     const allProjects = getProjects();
@@ -30,7 +30,22 @@ export default function Page({ params }: {params: { slug: string }}){
                     {/* spacer for nav bar */}
                     <div className="h-16"></div>
                     
-                    <a href="/#Projects" className="">Go back home</a>
+                    <a href="/#Projects" className="
+                        inline-flex
+                        items-center
+                        gap-2
+                        ml-4
+                        mb-6
+                        px-4
+                        py-2
+                        rounded-full
+                        border
+                        border-tie
+                        text-tie
+                        hover:bg-tie
+                        hover:text-slate-900
+                        transition-all">← Back to Projects
+                    </a>
                     <div className="flex justify-center items-center text-white">
                         <div className="flex flex-row w-full">
                             <CustomMDX source={project.content}/>

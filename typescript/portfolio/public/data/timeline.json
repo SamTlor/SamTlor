@@ -1,9 +1,9 @@
 {
     "data": [
         {
-            "title": "Data Analytics Student",
+            "title": "Online Master of Science in Analytics - computational track",
             "company": "Georgia Institute of Technology",
-            "tasks": "Created data visualizations and dashboards for various projects.",
+            "tasks": "Creating data visualizations and dashboards for various projects.",
             "tags": ["R", "Matplotlib", "Pandas"],
             "year": "2025"
         },
@@ -15,18 +15,11 @@
             "year": "2024"
         },
         {
-            "title": "Intern",
-            "company": "Web Traits Inc.",
-            "tasks": "Researched and implemented SMTP server solutions to enhance email reliability and speed. Designed a system for automatic Excel file updates.",
-            "tags": ["C#", "Visual Basic", ".NET"],
-            "year": "2022"
-        },
-        {
             "title": "Student",
             "company": "VCU",
             "tasks": "Developed foundational skills in many programming languages and techniques, including data science. For my senior project I worked with NASA to predict solar wind conditions on asteroid Psyche 16.",
             "tags": ["Java", "Linux", "C", "SQL", "Python"],
-            "year": "2021"
+            "year": "2023"
         }
     ]
 }

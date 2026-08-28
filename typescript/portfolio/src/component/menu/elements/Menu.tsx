@@ -4,9 +4,9 @@ import MenuItem from './MenuItem';
 function Menu (){
 
     return (<>
+        <MenuItem title={"Hello"}/>
         <MenuItem title={"About"}/>
         <MenuItem title={"Projects"}/>
-        <MenuItem title={"Services"}/>
         <ContactBtn title={'Contact Me'} />
         </>);
 }

@@ -8,16 +8,16 @@ tags: ["Pandas", "Machine Learning", "Data Visualization"]
 <div className="flex desktop:w-1/2 mobile:w-full mobile:p-4 flex-col desktop:p-20">
     <h1 className="flex text-4xl my-8 justify-center text-white font-bold">Using Machine Learning to Predict Solar Wind Conditions</h1>
 
-    <p>
+    <div>
         To build a model capapble of predicting solar wind conditions at the asteroid for NASA's Psyche mission, we have to first retrieve good training data. Data set consisting of data from an earth orbiting spacecraft at 1 AU and other data from another spacecraft further than 1 AU. However, there is a time delay between the winds hitting earth and the winds hitting the other spacecraft. This causes the data from an earth orbiting spacecraft at 1 AU to not have any correlation with the other spacecraft data. The majority of the project had to be spent on finding a way to use the data we gather and find the correlation between the two spacecraft at different AU.
-    </p>
+    </div>
     <img className="mobile:block desktop:hidden" src="../images/solarWindsOmniPioneer10.png" alt="Portrait"/>
 
 
     <h3 className="flex text-2xl my-8 justify-center text-white font-bold"> Our Method of Getting Correlated Data</h3>
-    <p>
+    <div>
         We used a method known as "window sliding" to give us a dataset we could use where the data from an earth orbiting satellite had correlation with data from another spacecraft. This method consisted of the following steps. Consider window 1 to be data from an earth orbiting satellite, and window 2 to be data from another spacecraft.
-    </p>
+    </div>
     <img className="mobile:block desktop:hidden" src="../images/solarWindsOmniVoyager2.png" alt="Portrait"/>
     
     <ul className="list-decimal list-inside space-y-4 text-lg text-white">
@@ -37,11 +37,11 @@ tags: ["Pandas", "Machine Learning", "Data Visualization"]
     <img className="mobile:block desktop:hidden" src="../images/solarWindsCode.png" alt="Portrait"/>
 
     <h3 className="flex text-2xl my-8 justify-center text-white font-bold">Building the Machine Learning Model</h3>
-    <p>
+    <div>
         Now that we have correlated data, this data can be used as training data to build a machine learning model to predict solar wind conditions. Data at OMNI (Earth Satellite) will be used as features to predict conditions at Voyager such as Speed, Density, Velocity, Magnetic Field, etc. 
 
         Ideally, all of the correlated dataset generated above will be used as training data, but for the purpose of testing this process, 5 random splits are conducted (5-fold cross validation) where most of the data will be training data, and some of it will be validation data. Because the values that our model is trying to predict are discrete, we use a linear regression algorithm and r^2 score to measure the model&apos;s performance.
-    </p>
+    </div>
 </div>
 
 <div className="desktop:flex mobile:hidden w-1/2 flex-col pl-10 space-y-6">
